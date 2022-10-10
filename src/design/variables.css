@@ -1,0 +1,11 @@
+:root {
+    --primaryColor: #FFF;
+}
+
+#root[data-theme='dark'] {
+    --primaryColor: #000;
+}
+
+#root {
+    background: var(--primaryColor);
+}
