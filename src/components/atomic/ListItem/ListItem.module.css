@@ -1,0 +1,13 @@
+.listItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.text {
+    font-family: 'Nunito';
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    color: #424242;
+}
