@@ -21,7 +21,7 @@ const CircleChart = ({ data, colors }) => {
     datasets: [
       {
         label: "# of Votes",
-        data: [12, 19],
+        data: data,
         backgroundColor: colors,
         borderWidth: 0,
         borderRadius: 50,
