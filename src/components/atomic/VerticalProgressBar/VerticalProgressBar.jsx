@@ -3,7 +3,7 @@ import cn from 'classnames';
 import PropTypes from 'prop-types';
 
 import styles from './VerticalProgressBar.module.css';
-import { Point } from '../../index';
+import { Point } from '../Point/Point';
 
 export const VerticalProgressBar = ({
     color, label, point, percent, className, ...props
