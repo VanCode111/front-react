@@ -1,12 +1,13 @@
 import React from 'react';
-import { HorizontalProgressBar, ListItem, VerticalProgressBar } from '../../components';
 
+import { HorizontalProgressBar, ListItem, VerticalProgressBar } from '../../components';
 import { Card } from '../../containers';
+import { AdminPage } from '../../containers/AdminPage/AdminPage';
 
 import styles from './dashboard.module.css';
 
 export const DashBoard = () => (
-    <div>
+    <AdminPage>
         <Card className={styles.card}>
             <h3 className={styles.title}>Пол аудитории</h3>
             <HorizontalProgressBar className={styles.progressBar} color="#AB5DE9" label="М" maxValue={3000} curValue={2567} />
@@ -38,5 +39,5 @@ export const DashBoard = () => (
                 <VerticalProgressBar color="#F280B0" percent={6} point />
             </div>
         </Card>
-    </div>
+    </AdminPage>
 );

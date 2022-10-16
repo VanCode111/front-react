@@ -4,6 +4,7 @@ import { useTheme } from '../hooks/useTheme';
 
 import { Main } from './main';
 import { DashBoard } from './dashboard';
+import { Account } from './account';
 
 const routes = [
     {
@@ -13,6 +14,10 @@ const routes = [
     {
         path: '/dashboard',
         element: <DashBoard />,
+    },
+    {
+        path: '/account',
+        element: <Account />,
     },
 ];
 
