@@ -1,0 +1,43 @@
+.progressBar {
+    display: grid;
+    grid-template-rows: auto minmax(140px, 1fr) auto;
+    gap: 6px;
+    align-items: center;
+    justify-items: center;
+}
+
+.label {
+    font-family: 'Nunito';
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.675rem;
+    color: #424242;
+}
+
+.value {
+    font-family: 'Nunito';
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.675rem;
+    color: #424242;
+    opacity: 0.3;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 100%;
+    width: 22px;
+    background-color:#EEEEEE;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.filler {
+    border-radius: inherit;
+}
+
+.point {
+    margin-top: 20px;
+}
