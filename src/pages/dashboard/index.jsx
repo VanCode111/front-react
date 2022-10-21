@@ -1,5 +1,9 @@
 import React from 'react';
-import { HorizontalProgressBar, ListItem, VerticalProgressBar } from '../../components';
+import {
+    HorizontalProgressBar,
+    ListItem,
+    VerticalProgressBar,
+} from '../../components';
 
 import { Card, MainCard } from '../../containers';
 
