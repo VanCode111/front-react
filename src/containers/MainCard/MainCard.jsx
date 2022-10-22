@@ -1,18 +1,19 @@
 import React from 'react';
 import cn from 'classnames';
-import PropTypes, { arrayOf } from 'prop-types';
+import PropTypes from 'prop-types';
 
 import styles from './MainCard.module.css';
 
 export const MainCard = ({
-    children, classNames, color, ...props
+    children, className, color, ...props
 }) => (
-    <div className={cn(...classNames, styles.mainCard)} {...props}>
+    <div className={cn(className, styles.mainCard)} {...props}>
         {children}
     </div>
 );
 
 MainCard.propTypes = {
-    children: arrayOf(PropTypes.element),
-    classNames: PropTypes.arrayOf(PropTypes.string),
+    children: PropTypes.element,
+    className: PropTypes.string,
+    color: PropTypes.string,
 };
