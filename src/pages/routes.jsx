@@ -5,6 +5,7 @@ import { useTheme } from "../hooks/useTheme";
 import { Main } from "./main";
 import { DashBoard } from "./dashboard";
 import { Account } from "./account";
+import { Login } from "./login";
 
 const routes = [
   {
@@ -18,6 +19,10 @@ const routes = [
   {
     path: "/account",
     element: <Account />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ];
 
