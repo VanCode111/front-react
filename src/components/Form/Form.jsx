@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { useForm } from 'react-hook-form';
 
 import { withLabel } from './withLabel';
 import { Input as AtomicInput, Textarea as AtmoicTextarea } from '../atomic';
 import { FormContext } from './context';
+
+import classes from './Form.module.css';
 
 const Input = ({
     name, type = 'text', id, register, ...props
@@ -20,9 +23,15 @@ Input.propTypes = {
 };
 
 const Option = ({
-    label, name, data, id, register, ...props
+    label, name, data, id, className, register, ...props
 }) => (
-    <select name={name} id={id} {...register(name)} {...props}>
+    <select
+        name={name}
+        id={id}
+        {...register(name)}
+        className={classNames(classes.select, className)}
+        {...props}
+    >
         {data.map((item) => <option value={item.value}>{item.content}</option>)}
     </select>
 );
@@ -30,6 +39,7 @@ const Option = ({
 Option.propTypes = {
     label: PropTypes.string,
     name: PropTypes.string,
+    className: PropTypes.string,
     data: PropTypes.arrayOf(PropTypes.objectOf({
         value: PropTypes.string,
         content: PropTypes.string,

@@ -21,4 +21,5 @@ Input.propTypes = {
     placeholder: PropTypes.string,
     type: PropTypes.string,
     className: PropTypes.string,
+    variant: PropTypes.string,
 };
