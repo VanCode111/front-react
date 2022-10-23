@@ -1,6 +1,87 @@
-.card {
-    width: 30%;
-    margin: 40px;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&display=swap');
+
+.dashboard {
+    font-family: 'Nunito', sans-serif;
+    padding: 41px 175px 0 175px;
+    background-color: #fff4e4;
+}
+
+.heading {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.mainStatistics {
+    margin-top: 41px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.mainCardViolet {
+    background: linear-gradient(106.68deg, #AC5EEA 14.35%, #7820BE 83.41%);
+    box-shadow: 0px 15px 30px rgba(96, 18, 156, 0.31);
+}
+  
+.mainCardYellow {
+    background: linear-gradient(106.68deg, #F5D83D 14.35%, #E89822 83.41%);
+    box-shadow: 0px 15px 30px rgba(190, 119, 11, 0.31);
+}
+
+.mainCardGreen {
+    background: linear-gradient(104.82deg, #C0EC61 14.75%, #E0E32E 84.54%);
+    box-shadow: 0px 15px 30px rgba(46, 156, 18, 0.31);
+}
+  
+.mainCard h3 {
+    display: block;
+}
+
+.mainName {
+    margin: 20px 0 0 20px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 27px;
+}
+
+.mainCount {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+.mainCount img {
+    margin-left: 6px;
+}
+
+.mainNumber {
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 50px;
+}
+
+.mainZigzag {
+    position: absolute;
+    bottom: 16px;
+}
+
+.secondaryItems {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+}
+
+.itemsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 630px;
+    gap: 20px;
+    margin: 0 40px 0 0;
 }
 
 .bars {
@@ -9,7 +90,6 @@
 }
 
 .title {
-    font-family: 'Nunito';
     font-weight: 700;
     font-size: 1.25rem;
     line-height: 1.625rem;

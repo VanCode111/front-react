@@ -4,18 +4,18 @@ import { PropTypes } from 'prop-types';
 
 import classes from './Input.module.css';
 
-export const Input = React.forwardRef(({
-    type = 'text',
-    className = '',
-    ...props
-}, ref) => (
-    <input
-        type={type}
-        className={cn(classes.input, className)}
-        {...props}
-        ref={ref}
-    />
-));
+export const Input = React.forwardRef(
+    ({
+        type = 'text', className = '', variant, ...props
+    }, ref) => (
+        <input
+            type={type}
+            className={cn(classes.input, className, classes[`variant_${variant}`])}
+            {...props}
+            ref={ref}
+        />
+    ),
+);
 
 Input.propTypes = {
     placeholder: PropTypes.string,
