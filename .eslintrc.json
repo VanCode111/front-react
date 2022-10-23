@@ -39,6 +39,9 @@
         "indent": ["error", 4],
         "react/jsx-indent": ["error", 4],
         "react/jsx-indent-props": ["error", 4],
-        "react/jsx-props-no-spreading": "off"
+        "react/jsx-props-no-spreading": "off",
+        "intreact/jsx-curly-brace-presence": "off",
+        "react/jsx-curly-brace-presence": "off",
+        "jsx-a11y/img-redundant-alt": "off"
     }
 }

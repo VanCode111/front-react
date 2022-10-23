@@ -1,0 +1,34 @@
+.login {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: url("../../static/images/Illustation.svg") no-repeat right;
+  background-size: contain;
+  height: 800px;
+}
+
+.title {
+  font-family: "Comfortaa";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 64px;
+  line-height: 70px;
+  margin-bottom: 80px;
+}
+
+.input {
+  margin-bottom: 35px;
+  width: 100%;
+}
+
+.form {
+  max-width: 400px;
+}
+
+.label {
+  font-family: "Nunito";
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+}
