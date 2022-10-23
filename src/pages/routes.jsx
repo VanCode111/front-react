@@ -8,6 +8,7 @@ import { Account } from './account';
 import { Login } from './login';
 
 import Calendar from '../components/CalendarDark/Calendar';
+import { About } from './about';
 
 const routes = [
     {
@@ -29,6 +30,10 @@ const routes = [
     {
         path: '/main',
         element: <Calendar />,
+    },
+    {
+        path: '/about',
+        element: <About />,
     },
 ];
 

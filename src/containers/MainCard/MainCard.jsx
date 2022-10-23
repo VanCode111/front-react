@@ -5,7 +5,7 @@ import PropTypes, { arrayOf } from 'prop-types';
 import styles from './MainCard.module.css';
 
 export const MainCard = ({
-    children, classNames, color, ...props
+    children, classNames, ...props
 }) => (
     <div className={cn(...classNames, styles.mainCard)} {...props}>
         {children}

@@ -4,7 +4,7 @@ import PropTypes, { arrayOf } from 'prop-types';
 
 import classes from './Card.module.css';
 
-export const Card = ({ children, classNames, ...props }) => (
+export const Card = ({ children, classNames = [], ...props }) => (
     <div className={cn(...classNames, classes.card)} {...props}>
         {children}
     </div>
