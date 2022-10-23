@@ -5,8 +5,8 @@ import { FormContext } from './context';
 
 import classes from './Form.module.css';
 
-// eslint-disable-next-line react/prop-types
 export const withLabel = (Component) => ({
+    // eslint-disable-next-line react/prop-types
     label, containerClass = '', variant, ...props
 }) => {
     const { register = null } = useContext(FormContext);
