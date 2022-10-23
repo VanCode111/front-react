@@ -1,0 +1,10 @@
+.inputContainer {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.inputLabel {
+    text-align: end;
+    min-width: 90px;
+}
