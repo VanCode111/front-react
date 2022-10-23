@@ -2,13 +2,16 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+}
+
+.root {
+    background: var(--var-body-bg);
     font-family: "Nunito";
-}
+}   
 
-body {
-    background: #0a0a0a;
+.root button {
+    cursor: pointer;
 }
-
 .promo {
     background-repeat: no-repeat;
     background-image: url("./theme.png");
@@ -23,7 +26,7 @@ body {
 }
 
 .header {
-    margin-top: 2.5rem;
+    padding-top: 2.5rem;
 }
 
 .header__container {
@@ -44,7 +47,7 @@ body {
 
 .header__links a {
     text-decoration: none;
-    color: #ffffff;
+    color: var(--var-body-fc);
     font-family: "Nunito";
     font-style: normal;
     font-weight: 300;
@@ -88,7 +91,7 @@ body {
     font-weight: 300;
     font-size: 28px;
     line-height: 38px;
-    color: #ffffff;
+    color: var(--var-body-fc);
     margin-right: 10px;
 }
 
@@ -97,7 +100,7 @@ body {
 }
 
 .header__nav button:nth-last-of-type(1) {
-    border: 2px solid #ffffff;
+    border: 2px solid var(--var-body-hc);;
     border-radius: 50px;
     padding: 5px 20px 5px 15px;
     margin-left: 12px;
@@ -114,7 +117,7 @@ body {
     font-weight: 300;
     font-size: 64px;
     line-height: 90px;
-    color: #fff7eb;
+    color: var(--var-body-fc);;
     margin-top: 170px;
     max-width: 560px;
 }
@@ -125,13 +128,13 @@ body {
     font-weight: 400;
     font-size: 24px;
     line-height: 33px;
-    color: #fff7eb;
+    color: var(--var-body-fc);;
     margin: 30px 0;
     max-width: 830px;
 }
 
 .main .content__button {
-    background: #27496c;
+    background: var(--var-body-sc);;
     border: none;
     border-radius: 20px;
     padding: 16px 64px;
@@ -140,7 +143,7 @@ body {
     font-weight: 500;
     font-size: 36px;
     line-height: 49px;
-    color: #ffffff;
+    color: var(--var-body-fc);
     margin-bottom: 30px;
 }
 
@@ -169,7 +172,7 @@ body {
     font-weight: 300;
     font-size: 64px;
     line-height: 70px;
-    color: #ffffff;
+    color: var(--var-body-fc);
 
     text-align: center;
 }
@@ -181,7 +184,7 @@ body {
     font-size: 24px;
     line-height: 33px;
     text-align: center;
-    color: #ffffff;
+    color: var(--var-body-fc);
     text-align: center;
 }
 .interface__switch {
@@ -194,18 +197,22 @@ body {
     border: none;
     background: none;
     font-size: 36px;
-    color: #ffffff;
+    color: var(--var-body-fc);
 
     line-height: 40px;
     text-transform: uppercase;
     border-radius: 38px;
     padding: 26px 18px;
+    border-bottom: 3px solid rgba(51, 51, 51, 0);
+}
+.interface__switch-btn:hover {
+    border-bottom: 3px solid var(--var-body-sc);
 }
 .interface__switch-btn + .interface__switch-btn {
     margin-left: 60px;
 }
 .interface__switch-btn--active {
-    border-bottom: 3px solid #a6bcd2;
+    border-bottom: 3px solid var(--var-body-sc);
 }
 .interface__img-wrap {
     margin-top: 86px;
@@ -223,12 +230,14 @@ body {
     font-size: 64px;
     line-height: 70px;
     text-align: center;
-    color: #ffffff;
+    color: var(--var-body-fc);
 }
 .ability__img-wrap {
-    margin-top: 75px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    width: 852px;
+    margin: 0 auto;
+    margin-top: 75px;
 }
 .ability__subtitle {
     font-weight: 100;
@@ -237,7 +246,7 @@ body {
     font-size: 36px;
     line-height: 40px;
     text-transform: uppercase;
-    color: #a6bcd2;
+    color: var(--var-body-hc);
 }
 .ability__paragraph {
     max-width: 1050px;
@@ -246,15 +255,14 @@ body {
     font-size: 24px;
     line-height: 33px;
     text-align: center;
-    color: #ffffff;
+    color: var(--var-body-fc);
     margin: 0 auto;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 .ability__btn {
     cursor: pointer;
     font-weight: 100;
     border: none;
-    background: #27496c;
     border-radius: 8px;
     width: 470px;
     height: 77px;
@@ -263,7 +271,8 @@ body {
     display: block;
     margin: 0 auto;
     margin-top: 75px;
-    color: #ffffff;
+    color: var(--var-body-fc);
+    background: var(--var-body-sc);
 }
 
 .people {
@@ -277,12 +286,12 @@ body {
 .people h2 {
     font-family: "Comfortaa";
     font-style: normal;
-    font-weight: 300;
+    font-weight: 100;
     font-size: 64px;
     line-height: 70px;
     text-align: center;
     margin-bottom: 75px;
-    color: #ffffff;
+    color: var(--var-body-fc);
 }
 .people__description {
     display: flex;
@@ -297,19 +306,19 @@ body {
 .people__description h3 {
     font-family: "Nunito";
     font-style: normal;
-    font-weight: 500;
+    font-weight: 300;
     font-size: 36px;
     line-height: 49px;
     margin-bottom: 20px;
-    color: #a6bcd2;
+    color: var(--var-body-hc);
 }
 .people__description p {
     font-family: "Nunito";
     font-style: normal;
-    font-weight: 400;
+    font-weight: 100;
     font-size: 24px;
     line-height: 33px;
-    color: #ffffff;
+    color: var(--var-body-fc);
 }
 .people__buttons {
     margin-top: 30px;
@@ -331,7 +340,56 @@ body {
 }
 
 .questions {
-    margin-bottom: 160px;
+    margin-bottom: 60px;
+    margin-top: 150px;
+}
+
+.questions__items {
+    margin-top: 50px;
+    display: grid;
+    gap: 30px;
+}
+
+.questions__item {
+    position: relative;
+}
+
+.questions__item-header {
+    border-radius: 10px 10px 0 0;
+    padding-left: 150px;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    cursor: pointer;
+    transition: 0.2s background;
+}
+
+.questions__item-header--active {
+    background: var(--var-body-sc);
+}
+
+.questions__item-header:hover {
+    background: var(--var-body-sc);
+}
+
+.questions__item-body {
+    padding: 0px 50px 25px 150px;
+    border-radius: 0px 0px 10px 10px;
+    padding-top: 5px;
+    background: var(--var-body-sc);
+    color: var(--var-body-fc);
+}
+
+.questions__item-text {
+    font-style: normal;
+    font-weight: 100;
+    font-size: 24px;
+    line-height: 33px;
+}
+
+.questions__item-icon {
+    position: absolute;
+    left: 0;
+    top: 0px;
 }
 
 .questions h2 {
@@ -340,7 +398,9 @@ body {
     font-weight: 300;
     font-size: 64px;
     line-height: 70px;
-    color: #ffffff;
+    margin-top: 70px;
+    text-align: center;
+    color: var(--var-body-fc);
 }
 
 .questions h3 {
@@ -350,51 +410,11 @@ body {
     font-size: 36px;
     line-height: 40px;
     text-transform: uppercase;
-    color: #ffffff;
+    color: var(--var-body-fc);
 }
-.question-hidden {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row;
-}
-.question-hidden button {
-    width: 80px;
-    height: 80px;
-    background: #27496c;
-    border-radius: 10px;
-    border: none;
-    font-size: 60px;
-    color: #e0f0ff;
-    margin-right: 23px;
-}
-.question-extended {
-    display: flex;
-    flex-direction: row;
-    background: #27496c;
-    border-radius: 10px;
-    margin-top: 30px;
-    padding: 20px 30px;
-}
-.question-extended button {
-    width: 80px;
-    height: 80px;
-    background: #27496c;
-    border-radius: 10px;
-    border: none;
-    font-size: 60px;
-    color: #e0f0ff;
-    margin-right: 50px;
-}
-.question-extended p {
-    font-family: "Nunito";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 33px;
-    color: #ffffff;
-    margin-top: 20px;
-}
+
 .footer__links {
+    margin-top: 80px;
     display: flex;
     flex-direction: row;
     margin-bottom: 95px;
@@ -414,13 +434,13 @@ body {
     text-decoration: none;
     font-family: "Nunito";
     font-style: normal;
-    font-weight: 400;
+    font-weight: 200;
     font-size: 24px;
     line-height: 33px;
-    color: #ffffff;
+    color: var(--var-body-fc);;
 }
 .project {
-    margin-bottom: 90px;
+    padding-bottom: 90px;
 }
 .project p {
     font-family: "Nunito";
