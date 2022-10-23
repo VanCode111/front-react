@@ -32,7 +32,7 @@ const ageAchievements = [
 export const Achievements = () => (
     <div className={classes.achievements}>
         <div className={classes.topPanel}>
-            <h2>Achievements</h2>
+            <h2>Мои достижения</h2>
             <div className={classes.buttons}>
                 <Button>
                     <span>Фильтр</span>
