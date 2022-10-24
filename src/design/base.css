@@ -12,3 +12,17 @@
   width: 100%;
   font-family: "Nunito";
 }
+
+/* :root {
+  --var-body-bg: white;
+  --var-body-fc: black;
+  --var-body-sc: #FFE0B2;
+  --var-body-hc: #C28327;
+} */
+
+:root {
+  --var-body-bg: black;
+  --var-body-fc: white;
+  --var-body-sc: #27496C;
+  --var-body-hc: white;
+}
