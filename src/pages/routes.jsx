@@ -6,9 +6,10 @@ import { Main } from './main';
 import { DashBoard } from './dashboard';
 import { Account } from './account';
 import { Login } from './login';
+import { CalendarPage } from './calendar';
+import { About } from './about';
 
 import Calendar from '../components/CalendarDark/Calendar';
-import { About } from './about';
 
 const routes = [
     {
@@ -35,6 +36,10 @@ const routes = [
         path: '/about',
         element: <About />,
     },
+    {
+        path: '/calendar',
+        element: <CalendarPage />,
+    }
 ];
 
 export const AppRouter = () => {

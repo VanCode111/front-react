@@ -1,3 +1,5 @@
+import React from 'react';
+
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import classes from './Calendar.module.css';
 import abitities from './abilities.png';
