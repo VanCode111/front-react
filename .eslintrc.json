@@ -43,6 +43,9 @@
         "no-shadow": "off",
         "no-unused-vars": "warn",
         "react/react-in-jsx-scope": "off",
-        "react/forbid-prop-types": "off"
+        "react/forbid-prop-types": "off",
+        "intreact/jsx-curly-brace-presence": "off",
+        "jsx-a11y/img-redundant-alt": "off",
+        "jsx-a11y/anchor-is-valid": "off"
     }
 }

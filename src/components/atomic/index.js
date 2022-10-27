@@ -6,3 +6,5 @@ export * from './LangButton/LangButton';
 export * from './CircleChart/CircleChart';
 export * from './ThemeButton/ThemeButton';
 export * from './MenuButton/MenuButton';
+export * from './Textarea/Textarea';
+export * from './Input/Input';

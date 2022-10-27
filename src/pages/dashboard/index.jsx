@@ -9,6 +9,7 @@ import {
 } from '../../components';
 
 import { Card, MainCard } from '../../containers';
+import { AdminPage } from '../../containers/AdminPage/AdminPage';
 
 import zigzag from './assets/zigzag.svg';
 import human from './assets/manish.svg';
