@@ -229,11 +229,26 @@
   display: flex;
   justify-content: center;
 }
+.interface__img-wrap img{
+  max-width: 600px;
+  width: 100%;
+}
 .interface__img + .interface__img {
   margin-left: 60px;
 }
 .ability {
   margin-top: 130px;
+}
+.ability svg {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.2s;
+}
+.ability svg:hover {
+  opacity: 1;
+}
+.ability__active {
+  opacity: 1 !important;
 }
 .ability__title {
   font-weight: 100;
@@ -294,7 +309,6 @@
   justify-content: center;
   flex-direction: column;
 }
-
 .people h2 {
   font-family: "Comfortaa";
   font-style: normal;
@@ -311,9 +325,18 @@
   align-items: center;
   justify-content: center;
 }
+.people__description img {
+  width: 420px;
+}
+@media (max-width: 500px) {
+  .people__description img {
+    width: 100%;
+  }
+}
 .people__description div {
   max-width: 775px;
   margin-left: 20px;
+  padding-left: 40px;
 }
 .people__description h3 {
   font-family: "Nunito";
@@ -355,7 +378,9 @@
   margin-bottom: 60px;
   margin-top: 150px;
 }
-
+.questions__item-icon {
+  width: 80px;
+}
 .questions__items {
   margin-top: 50px;
   display: grid;
@@ -560,19 +585,37 @@
     width: 30px;
     height: 30px;
   }
-  .interface__img-wrap img {
-    width: 315px;
-    height: 191px;
-  }
-  .people__description img {
+  /* .interface__img-wrap img {
+    width: 100px;
+  } */
+  /* .people__description img {
     width: 340px;
     height: 174px;
+  } */
+  .questions h3 {
+    font-size: 18px;
+  }
+  .questions__item-text {
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .questions__item-icon {
+    top: 15px;
+    left: 5px;
+    width: 36px;
+  }
+  .people__description div {
+    padding-left: 0px;
   }
   .questions__item-header {
-    padding-left: 85px;
+    padding-left: 54px;
+    padding-top: 10px;
+    padding-bottom: 0px;
   }
   .questions__item-body {
-    padding: 0 10px 25px 85px;
+    padding: 5px 10px 25px 54px;
   }
   .questions__item h3 {
     font-size: 24px;
@@ -597,8 +640,8 @@
 
 @media (min-width: 561px) and (max-width: 1000px) {
   .interface__img-wrap img {
-    width: 524px;
-    height: 318px;
+    /* width: 524px;
+    height: 318px; */
   }
 }
 @media (max-width: 600px) {

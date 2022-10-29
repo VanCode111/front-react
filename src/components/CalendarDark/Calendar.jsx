@@ -1,9 +1,13 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable */
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import classes from "./Calendar.module.css";
-import abitities from "./abilities.png";
+import desctop from "./macbook.png";
+import mobile from "./mobile.png";
 import people from "./people.png";
+import business from "./business.png";
+import group from "./group.png";
+import useSwitcher from "./hooks/useSwitcher";
 
 const Calendar = () => {
   // ligth
@@ -18,7 +22,25 @@ const Calendar = () => {
   const helperColor = "#FFF";
   const contrColor = "#000";
 
-  const [accordState, setAccordState] = useState({});
+  const dumpSwitchCb = useCallback(
+    (prev, index) => ({
+      [index]: true,
+    }),
+    []
+  );
+  const [accordState, setAccordState] = useSwitcher({}, (prev, index) => ({
+    ...prev,
+    [index]: !prev[index],
+  }));
+
+  const [gadgetState, setGadgetState] = useSwitcher({ 0: true }, dumpSwitchCb);
+
+  const [abilityState, setAbilityState] = useSwitcher(
+    { 0: true },
+    dumpSwitchCb
+  );
+
+  const [peopleState, setPeopleState] = useSwitcher({ 0: true }, dumpSwitchCb);
 
   const [showMenu, setShowMenu] = useState(true);
 
@@ -353,13 +375,19 @@ const Calendar = () => {
           <div className={classes.interface__switch}>
             <button
               type={"button"}
-              className={`${classes["interface__switch-btn"]} ${classes["interface__switch-btn--active"]}`}
+              className={`${classes["interface__switch-btn"]} ${
+                gadgetState[0] && classes["interface__switch-btn--active"]
+              }`}
+              onClick={() => setGadgetState(0)}
             >
               Desktop
             </button>
             <button
-              className={classes["interface__switch-btn"]}
+              className={`${classes["interface__switch-btn"]} ${
+                gadgetState[1] && classes["interface__switch-btn--active"]
+              }`}
               type={"button"}
+              onClick={() => setGadgetState(1)}
             >
               Mobile
             </button>
@@ -367,7 +395,7 @@ const Calendar = () => {
           <div className={classes["interface__img-wrap"]}>
             <img
               className={classes.interface__img}
-              src="images/macbook.png"
+              src={gadgetState[0] ? desctop : mobile}
               alt="Macbook"
             />
           </div>
@@ -377,6 +405,8 @@ const Calendar = () => {
           <h2 className={classes.ability__title}>Ключевые возможности!</h2>
           <div className={classes["ability__img-wrap"]}>
             <svg
+              className={abilityState[0] && classes["ability__active"]}
+              onClick={() => setAbilityState(0)}
               width="80"
               height="80"
               viewBox="0 0 80 80"
@@ -408,6 +438,8 @@ const Calendar = () => {
             </svg>
 
             <svg
+              className={abilityState[1] && classes["ability__active"]}
+              onClick={() => setAbilityState(1)}
               width="80"
               height="80"
               viewBox="0 0 80 80"
@@ -446,6 +478,8 @@ const Calendar = () => {
             </svg>
 
             <svg
+              className={abilityState[2] && classes["ability__active"]}
+              onClick={() => setAbilityState(2)}
               width="80"
               height="80"
               viewBox="0 0 80 80"
@@ -463,6 +497,8 @@ const Calendar = () => {
             </svg>
 
             <svg
+              className={abilityState[3] && classes["ability__active"]}
+              onClick={() => setAbilityState(3)}
               width="80"
               height="80"
               viewBox="0 0 80 80"
@@ -508,6 +544,8 @@ const Calendar = () => {
             </svg>
 
             <svg
+              className={abilityState[4] && classes["ability__active"]}
+              onClick={() => setAbilityState(4)}
               width="80"
               height="80"
               viewBox="0 0 80 80"
@@ -531,19 +569,96 @@ const Calendar = () => {
               />
             </svg>
           </div>
-          <h3 className={classes.ability__subtitle}>
-            Планирование на годы вперед
-          </h3>
-          <div className={classes.ability__paragraph}>
-            Мы вынуждены отталкиваться от того, что разбавленное изрядной долей
-            эмпатии, рациональное мышление влечет за собой процесс внедрения и
-            модернизации укрепления моральных ценностей. А также
-            непосредственные участники технического прогресса набирают
-            популярность среди определенных слоев населения, а значит, должны
-            быть ассоциативно распределены по отраслям. Задача организации, в
-            особенности же убеждённость некоторых оппонентов способствует
-            подготовке и реализации анализа существующих паттернов поведения.
-          </div>
+          {abilityState[0] && (
+            <>
+              <h3 className={classes.ability__subtitle}>
+                Планирование на годы вперед 1
+              </h3>
+              <div className={classes.ability__paragraph}>
+                Мы вынуждены отталкиваться от того, что разбавленное изрядной
+                долей эмпатии, рациональное мышление влечет за собой процесс
+                внедрения и модернизации укрепления моральных ценностей. А также
+                непосредственные участники технического прогресса набирают
+                популярность среди определенных слоев населения, а значит,
+                должны быть ассоциативно распределены по отраслям. Задача
+                организации, в особенности же убеждённость некоторых оппонентов
+                способствует подготовке и реализации анализа существующих
+                паттернов поведения.
+              </div>
+            </>
+          )}
+          {abilityState[1] && (
+            <>
+              <h3 className={classes.ability__subtitle}>
+                Планирование на годы вперед 2
+              </h3>
+              <div className={classes.ability__paragraph}>
+                Мы вынуждены отталкиваться от того, что разбавленное изрядной
+                долей эмпатии, рациональное мышление влечет за собой процесс
+                внедрения и модернизации укрепления моральных ценностей. А также
+                непосредственные участники технического прогресса набирают
+                популярность среди определенных слоев населения, а значит,
+                должны быть ассоциативно распределены по отраслям. Задача
+                организации, в особенности же убеждённость некоторых оппонентов
+                способствует подготовке и реализации анализа существующих
+                паттернов поведения.
+              </div>
+            </>
+          )}
+          {abilityState[2] && (
+            <>
+              <h3 className={classes.ability__subtitle}>
+                Планирование на годы вперед 3
+              </h3>
+              <div className={classes.ability__paragraph}>
+                Мы вынуждены отталкиваться от того, что разбавленное изрядной
+                долей эмпатии, рациональное мышление влечет за собой процесс
+                внедрения и модернизации укрепления моральных ценностей. А также
+                непосредственные участники технического прогресса набирают
+                популярность среди определенных слоев населения, а значит,
+                должны быть ассоциативно распределены по отраслям. Задача
+                организации, в особенности же убеждённость некоторых оппонентов
+                способствует подготовке и реализации анализа существующих
+                паттернов поведения.
+              </div>
+            </>
+          )}
+          {abilityState[3] && (
+            <>
+              <h3 className={classes.ability__subtitle}>
+                Планирование на годы вперед 4
+              </h3>
+              <div className={classes.ability__paragraph}>
+                Мы вынуждены отталкиваться от того, что разбавленное изрядной
+                долей эмпатии, рациональное мышление влечет за собой процесс
+                внедрения и модернизации укрепления моральных ценностей. А также
+                непосредственные участники технического прогресса набирают
+                популярность среди определенных слоев населения, а значит,
+                должны быть ассоциативно распределены по отраслям. Задача
+                организации, в особенности же убеждённость некоторых оппонентов
+                способствует подготовке и реализации анализа существующих
+                паттернов поведения.
+              </div>
+            </>
+          )}
+          {abilityState[4] && (
+            <>
+              <h3 className={classes.ability__subtitle}>
+                Планирование на годы вперед 5
+              </h3>
+              <div className={classes.ability__paragraph}>
+                Мы вынуждены отталкиваться от того, что разбавленное изрядной
+                долей эмпатии, рациональное мышление влечет за собой процесс
+                внедрения и модернизации укрепления моральных ценностей. А также
+                непосредственные участники технического прогресса набирают
+                популярность среди определенных слоев населения, а значит,
+                должны быть ассоциативно распределены по отраслям. Задача
+                организации, в особенности же убеждённость некоторых оппонентов
+                способствует подготовке и реализации анализа существующих
+                паттернов поведения.
+              </div>
+            </>
+          )}
           <button className={classes.ability__btn} type={"submit"}>
             Попробовать бесплатно
           </button>
@@ -551,27 +666,84 @@ const Calendar = () => {
         <section className={classes.people}>
           <h2>Кому подойдет?</h2>
           <div className={classes.people__description}>
-            <img src={people} alt="People" width={510} height={261} />
-            <div>
-              <h3>Людям с большими планами на жизнь</h3>
-              <p>
-                Людям с большими планами на жизнь Повседневная практика
-                показывает, что сложившаяся структура организации не оставляет
-                шанса для как самодостаточных, так и внешне зависимых
-                концептуальных решений. С учётом сложившейся международной
-                обстановки, постоянное информационно-пропагандистское
-                обеспечение нашей деятельности, в своём классическом
-                представлении, допускает внедрение глубокомысленных рассуждений.
-                Как уже неоднократно упомянуто, базовые сценарии поведения
-                пользователей формируют глобальную экономическую сеть и при этом
-                — своевременно верифицированы.
-              </p>
-            </div>
+            {peopleState[0] && (
+              <>
+                <img src={people} alt="People" />
+                <div>
+                  <h3>Людям с большими планами на жизнь</h3>
+                  <p>
+                    Людям с большими планами на жизнь Повседневная практика
+                    показывает, что сложившаяся структура организации не
+                    оставляет шанса для как самодостаточных, так и внешне
+                    зависимых концептуальных решений. С учётом сложившейся
+                    международной обстановки, постоянное
+                    информационно-пропагандистское обеспечение нашей
+                    деятельности, в своём классическом представлении, допускает
+                    внедрение глубокомысленных рассуждений. Как уже неоднократно
+                    упомянуто, базовые сценарии поведения пользователей
+                    формируют глобальную экономическую сеть и при этом —
+                    своевременно верифицированы.
+                  </p>
+                </div>
+              </>
+            )}
+            {peopleState[1] && (
+              <>
+                <img src={business} alt="People" />
+                <div>
+                  <h3>Бизнесменам</h3>
+                  <p>
+                    Спроектировать списки деловых встреч, отслеживать успехи
+                    бизнеса, доходов и затрат. Жить в достатке в свое
+                    удовольствие.
+                  </p>
+                </div>
+              </>
+            )}
+            {peopleState[2] && (
+              <>
+                <img src={group} alt="People" />
+                <div>
+                  <h3>Людям с большими планами на жизнь</h3>
+                  <p>
+                    Людям с большими планами на жизнь Повседневная практика
+                    показывает, что сложившаяся структура организации не
+                    оставляет шанса для как самодостаточных, так и внешне
+                    зависимых концептуальных решений. С учётом сложившейся
+                    международной обстановки, постоянное
+                    информационно-пропагандистское обеспечение нашей
+                    деятельности, в своём классическом представлении, допускает
+                    внедрение глубокомысленных рассуждений. Как уже неоднократно
+                    упомянуто, базовые сценарии поведения пользователей
+                    формируют глобальную экономическую сеть и при этом —
+                    своевременно верифицированы.
+                  </p>
+                </div>
+              </>
+            )}
           </div>
           <div className={classes.people__buttons}>
-            <button type={"submit"} style={{ background: helperColor }} />
-            <button type={"submit"} style={{ background: subColor }} />
-            <button type={"submit"} style={{ background: subColor }} />
+            <button
+              type={"submit"}
+              style={{ background: peopleState[0] ? helperColor : subColor }}
+              onClick={() => {
+                setPeopleState(0);
+              }}
+            />
+            <button
+              type={"submit"}
+              style={{ background: peopleState[1] ? helperColor : subColor }}
+              onClick={() => {
+                setPeopleState(1);
+              }}
+            />
+            <button
+              type={"submit"}
+              style={{ background: peopleState[2] ? helperColor : subColor }}
+              onClick={() => {
+                setPeopleState(2);
+              }}
+            />
           </div>
         </section>
         <section className={classes.questions}>
@@ -584,14 +756,10 @@ const Calendar = () => {
                     ? classes["questions__item-header--active"]
                     : ""
                 }`}
-                onClick={() =>
-                  setAccordState((prev) => ({ ...prev, 0: !prev[0] }))
-                }
+                onClick={() => setAccordState(0)}
               >
                 <svg
                   className={classes["questions__item-icon"]}
-                  width="80"
-                  height="80"
                   viewBox="0 0 80 80"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -637,14 +805,10 @@ const Calendar = () => {
                     ? classes["questions__item-header--active"]
                     : ""
                 }`}
-                onClick={() =>
-                  setAccordState((prev) => ({ ...prev, 1: !prev[1] }))
-                }
+                onClick={() => setAccordState(1)}
               >
                 <svg
                   className={classes["questions__item-icon"]}
-                  width="80"
-                  height="80"
                   viewBox="0 0 80 80"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -690,14 +854,10 @@ const Calendar = () => {
                     ? classes["questions__item-header--active"]
                     : ""
                 }`}
-                onClick={() =>
-                  setAccordState((prev) => ({ ...prev, 2: !prev[2] }))
-                }
+                onClick={() => setAccordState(2)}
               >
                 <svg
                   className={classes["questions__item-icon"]}
-                  width="80"
-                  height="80"
                   viewBox="0 0 80 80"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -743,14 +903,10 @@ const Calendar = () => {
                     ? classes["questions__item-header--active"]
                     : ""
                 }`}
-                onClick={() =>
-                  setAccordState((prev) => ({ ...prev, 3: !prev[3] }))
-                }
+                onClick={() => setAccordState(3)}
               >
                 <svg
                   className={classes["questions__item-icon"]}
-                  width="80"
-                  height="80"
                   viewBox="0 0 80 80"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
