@@ -38,7 +38,21 @@ const Calendar = () => {
               <div className={classes.header__logo}>
                 <img width={60} height={60} src="images/logo.svg" alt="Logo" />
               </div>
-              <div className={classes.header__wrapper}>
+              <div
+                className={`${showMenu} ? ${classes.header__wrapper} : ${classes.header__menu}`}
+              >
+                {!showMenu && (
+                  <button>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="white"
+                      height="48"
+                      width="48"
+                    >
+                      <path d="M6 36v-3h36v3Zm0-10.5v-3h36v3ZM6 15v-3h36v3Z" />
+                    </svg>
+                  </button>
+                )}
                 {showMenu && (
                   <ul className={classes.header__links}>
                     <li>
