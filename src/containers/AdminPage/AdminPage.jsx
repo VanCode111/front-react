@@ -5,7 +5,9 @@ import { Header, Sidebar } from '../../components';
 
 import classes from './AdminPage.module.css';
 
-export const AdminPage = ({ children, title = null, disablePadding = false }) => (
+export const AdminPage = ({
+    children, title = null, disablePadding = false, mainClassName,
+}) => (
     <div className={classes.wrapper}>
         <header className={classes.header}>
             <Header />
@@ -15,7 +17,7 @@ export const AdminPage = ({ children, title = null, disablePadding = false }) =>
         </aside>
         <main className={cn({
             [classes.main]: !disablePadding,
-        })}
+        }, mainClassName)}
         >
             {title && <h1 className={classes.title}>{title}</h1>}
             {children}
@@ -30,4 +32,5 @@ AdminPage.propTypes = {
     children: PropTypes.element,
     title: PropTypes.string,
     disablePadding: PropTypes.bool,
+    mainClassName: PropTypes.string,
 };

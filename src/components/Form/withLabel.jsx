@@ -7,7 +7,7 @@ import classes from './Form.module.css';
 
 export const withLabel = (Component) => ({
     // eslint-disable-next-line react/prop-types
-    label, containerClass = '', variant, ...props
+    label, containerClass = '', labelClass = '', variant, ...props
 }) => {
     const { register = null } = useContext(FormContext);
     const id = useId();
@@ -19,7 +19,7 @@ export const withLabel = (Component) => ({
                 classes[`variant_${variant}`],
             )}
         >
-            <label htmlFor={id} className={classes.inputLabel}>
+            <label htmlFor={id} className={cn(classes.inputLabel, labelClass)}>
                 {label}
             </label>
             <Component register={register} id={id} {...props} variant={variant} />

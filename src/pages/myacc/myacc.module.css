@@ -1,6 +1,7 @@
 .graphicContainer {
     display: flex;
     margin-top: 25px;
+    background: var(--secondaryShade1OrPrimaryShade2);
 }
 
 .graphic {
@@ -19,4 +20,12 @@
 
 .graphic canvas {
     flex: 1;
+}
+
+.wrapper {
+    background: var(--primaryOrContrast);
+}
+
+.card {
+    background: var(--secondaryShade1OrPrimaryShade2);
 }

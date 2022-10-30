@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
-import { LangButton, ThemeButton } from '../../index';
+import { LangButton, ThemeButton } from '../../atomic';
 import LogoIcon from './assets/logo.svg';
 import OutIcon from './assets/out.svg';
 
@@ -10,7 +10,7 @@ import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
 
 export const Header = ({ className, ...props }) => (
-    <header className={cn(className, styles.header)} {...props}>
+    <div className={cn(className, styles.header)} {...props}>
         <div className={styles.container}>
             <img src={LogoIcon} alt="логотип" />
             <nav className={styles.navigation}>
@@ -33,7 +33,7 @@ export const Header = ({ className, ...props }) => (
                 <ThemeButton />
             </div>
         </div>
-    </header>
+    </div>
 );
 
 Header.propTypes = {
