@@ -1,0 +1,48 @@
+.wrapper {
+    display: flex;
+    gap: 70px;
+    color: #424242;
+    position: relative;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 20px;
+    line-height: 27px;
+}
+
+.avatar {
+    width: 222px;
+    height: 222px;
+}
+
+.avatarTitle {
+    width: 100%;
+    text-align: center;
+    margin-top: 14px;
+    line-height: 24px;
+}
+
+.textarea {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.status {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    text-decoration-line: underline;
+    color: #424242;
+    display: flex;
+    gap: 15px;
+}

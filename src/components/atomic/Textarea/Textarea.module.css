@@ -1,0 +1,15 @@
+.textarea {
+    padding: 7px 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+}
+
+.textarea:focus {
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
