@@ -15,6 +15,7 @@
 .promo {
   background-repeat: no-repeat;
   background-image: url("./theme.png");
+  /* background-image: url("./theme-dark.png"); */
   background-size: cover;
   background-position-y: -90px;
   background-position-x: 40px;
@@ -745,6 +746,9 @@
     width: 70px;
     height: 142px;
   }
+  .interface__switch-btn {
+    font-size: 25px !important;
+  }
 }
 @media (min-width: 401px) and (max-width: 560px) {
   .main__images img:first-of-type {
@@ -790,7 +794,7 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 27px;
-    text-align: center;
+    /* text-align: center; */
   }
   .ability__title,
   .people h2 {
@@ -881,7 +885,6 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 19px;
-    text-align: center;
   }
   .ability__title,
   .people h2,
@@ -900,6 +903,5 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 25px;
-    text-align: center;
   }
 }
