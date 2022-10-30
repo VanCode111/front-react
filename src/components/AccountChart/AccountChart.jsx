@@ -26,22 +26,40 @@ export const options = {
     plugins: {
         legend: {
             position: 'top',
+            labels: {
+                color: 'var(--primaryOrConstast)',
+            },
         },
     },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const labels = [
+    'янв',
+    'фев',
+    'март',
+    'апр',
+    'май',
+    'июнь',
+    'июль',
+    'авг',
+    'сент',
+    'окт',
+    'ноябрь',
+    'дек',
+];
 
-export const data = {
-    labels,
-    datasets: [
-        {
-            label: 'Статистика посещаемости',
-            data: [1000, 10, -123, 13, 1000, 22],
-            borderColor: 'rgb(255, 99, 132)',
-            backgroundColor: 'rgba(255, 99, 132, 0.5)',
-        },
-    ],
+export const AccountChart = ({ activity }) => {
+    const data = {
+        labels,
+        datasets: [
+            {
+                label: 'Статистика посещаемости',
+                data: activity,
+                borderColor: 'rgb(255, 99, 132)',
+                backgroundColor: 'rgba(255, 99, 132, 0.5)',
+            },
+        ],
+    };
+
+    return <Line options={options} data={data} />;
 };
-
-export const AccountChart = () => <Line options={options} data={data} />;

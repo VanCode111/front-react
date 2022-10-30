@@ -1,6 +1,7 @@
 .textarea {
     padding: 7px 30px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: inherit;
+    border: 1px solid var(--inputBorderColor);
     border-radius: 12px;
     font-family: 'Nunito';
     font-style: normal;

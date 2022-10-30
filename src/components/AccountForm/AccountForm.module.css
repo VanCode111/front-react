@@ -1,8 +1,14 @@
 .wrapper {
     display: flex;
     gap: 70px;
-    color: #424242;
     position: relative;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-size: 20px;
 }
 
 .list {
@@ -42,7 +48,22 @@
     font-size: 20px;
     line-height: 27px;
     text-decoration-line: underline;
-    color: #424242;
     display: flex;
     gap: 15px;
+}
+
+.checkbox {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    /* min-width: 200px; */
+}
+
+.checkboxLabel {
+    min-width: auto;
+}
+.checkboxContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

@@ -9,8 +9,8 @@ export const Input = React.forwardRef(
         type = 'text', className = '', variant, ...props
     }, ref) => (
         <input
-            type={type}
             className={cn(classes.input, className, classes[`variant_${variant}`])}
+            type={type}
             {...props}
             ref={ref}
         />

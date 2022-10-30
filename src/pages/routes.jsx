@@ -7,9 +7,12 @@ import { DashBoard } from './dashboard';
 import { Achievements } from './achievements';
 import { Account } from './account';
 import { Login } from './login';
+import { CalendarPage } from './calendar';
+import { About } from './about';
+import { MyAccount } from './myacc';
 
 import Calendar from '../components/CalendarDark/Calendar';
-import { About } from './about';
+
 import { ThemeContext } from './context';
 
 const routes = [
@@ -24,7 +27,8 @@ const routes = [
     {
         path: '/achievements',
         element: <Achievements />,
-    }, {
+    },
+    {
         path: '/account',
         element: <Account />,
     },
@@ -40,16 +44,27 @@ const routes = [
         path: '/about',
         element: <About />,
     },
+    {
+        path: '/calendar',
+        element: <CalendarPage />,
+    },
+    {
+        path: '/myacc',
+        element: <MyAccount />,
+    },
 ];
 
 export const AppRouter = () => {
     const { theme, setTheme } = useTheme();
     const component = useRoutes(routes);
 
-    const themeContext = useMemo(() => ({
-        theme,
-        setTheme,
-    }), [setTheme, theme]);
+    const themeContext = useMemo(
+        () => ({
+            theme,
+            setTheme,
+        }),
+        [setTheme, theme],
+    );
 
     return (
         <ThemeContext.Provider value={themeContext}>
