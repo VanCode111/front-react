@@ -16,7 +16,7 @@ export const AccountForm = () => {
             <Form onSubmit={onSubmit} className={classes.wrapper}>
                 <div>
                     <figure>
-                        <img src={'http://cdn.onlinewebfonts.com/svg/img_235552.png'} alt={'photo'} className={classes.avatar} />
+                        <img src="http://cdn.onlinewebfonts.com/svg/img_235552.png" alt="photo" className={classes.avatar} />
                         <figcaption className={classes.avatarTitle}>
                             <div>Alena</div>
                             <div>18 ye</div>
@@ -24,11 +24,11 @@ export const AccountForm = () => {
                     </figure>
                 </div>
                 <div className={classes.list}>
-                    <Form.Input label={'Имя'} name={'firstName'} />
-                    <Form.Input label={'Фамилия'} name={'lastName'} />
+                    <Form.Input label="Имя" name="firstName" />
+                    <Form.Input label="Фамилия" name="lastName" />
                     <Form.Option
-                        label={'Пол'}
-                        name={'sex'}
+                        label="Пол"
+                        name="sex"
                         data={[{
                             value: 'woman',
                             content: 'Женский',
@@ -37,11 +37,11 @@ export const AccountForm = () => {
                             content: 'Мужской',
                         }]}
                     />
-                    <Form.Input label={'Почта'} name={'email'} type={'email'} />
-                    <Form.Input label={'Пароль'} name={'password'} type={'password'} />
+                    <Form.Input label="Почта" name="email" type="email" />
+                    <Form.Input label="Пароль" name="password" type="password" />
                 </div>
                 <div className={classes.list}>
-                    <Form.Textarea label={'Обо мне'} name={'about'} containerClass={classes.textarea} placeholder={'Расскажите о себе'} />
+                    <Form.Textarea label="Обо мне" name="about" containerClass={classes.textarea} placeholder="Расскажите о себе" />
                 </div>
                 <div className={classes.status}>
                     <span>Admin</span>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -6,13 +6,16 @@ import SunIcon from './assets/sun.svg';
 import MoonIcon from './assets/moon.svg';
 
 import styles from './ThemeButton.module.css';
+import { ThemeContext } from '../../../pages/context';
 
 export const ThemeButton = ({ className, ...props }) => {
-    const [theme, setTheme] = useState('light');
+    const { theme, setTheme } = useContext(ThemeContext);
 
     const changeTheme = () => {
-        setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+        setTheme(theme === 'light' ? 'dark' : 'light');
     };
+
+    console.log('THEME', theme);
 
     return (
         <button
@@ -34,4 +37,5 @@ export const ThemeButton = ({ className, ...props }) => {
 
 ThemeButton.propTypes = {
     className: PropTypes.string,
+    onClick: PropTypes.func,
 };

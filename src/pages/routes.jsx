@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useMemo } from 'react';
 import { useRoutes } from 'react-router-dom';
 import { useTheme } from '../hooks/useTheme';
 
@@ -10,6 +10,7 @@ import { Login } from './login';
 
 import Calendar from '../components/CalendarDark/Calendar';
 import { About } from './about';
+import { ThemeContext } from './context';
 
 const routes = [
     {
@@ -42,8 +43,17 @@ const routes = [
 ];
 
 export const AppRouter = () => {
-    useTheme();
+    const { theme, setTheme } = useTheme();
     const component = useRoutes(routes);
 
-    return component;
+    const themeContext = useMemo(() => ({
+        theme,
+        setTheme,
+    }), [setTheme, theme]);
+
+    return (
+        <ThemeContext.Provider value={themeContext}>
+            {component}
+        </ThemeContext.Provider>
+    );
 };
