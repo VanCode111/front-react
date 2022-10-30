@@ -28,6 +28,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .header__logo img {
@@ -39,23 +40,49 @@
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  gap: 60px;
+  position: relative;
 }
 .header__menu {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-  }
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
 .header__menu button {
-    border: none;
-    background-color: inherit;
+  border: none;
+  background-color: inherit;
 }
 .header__links {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-right: 60px;
+}
+.header__links-mobile {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.592);
+  backdrop-filter: blur(10px);
+  right: 0;
+  top: 70px;
+  transition: all 0.5s ease-in-out;
+  width: 35%;
+  border: 1px solid white;
+  border-radius: 25px;
+  min-height: 200px;
+  box-shadow: 5px 5px 5px -5px rgba(49, 49, 49, 0.6);
+}
+.header__links-mobile li {
+  text-align: center;
+}
+.header__links-mobile a {
+  color: white;
+  text-decoration: none;
 }
 
 .header__links a {
@@ -86,6 +113,7 @@
 .button__wrapper {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .header__nav button {
@@ -229,7 +257,7 @@
   display: flex;
   justify-content: center;
 }
-.interface__img-wrap img{
+.interface__img-wrap img {
   max-width: 600px;
   width: 100%;
 }
@@ -574,9 +602,6 @@
   .interface__switch-btn:last-of-type {
     margin-left: 20px;
   }
-  .interface__title {
-    font-size: 42px;
-  }
   .main__images {
     margin-bottom: 50px;
   }
@@ -592,15 +617,6 @@
     width: 340px;
     height: 174px;
   } */
-  .questions h3 {
-    font-size: 18px;
-  }
-  .questions__item-text {
-    font-style: normal;
-    font-weight: 100;
-    font-size: 16px;
-    line-height: 19px;
-  }
   .questions__item-icon {
     top: 15px;
     left: 5px;
@@ -616,9 +632,6 @@
   }
   .questions__item-body {
     padding: 5px 10px 25px 54px;
-  }
-  .questions__item h3 {
-    font-size: 24px;
   }
   .people {
     margin-top: 60px;
@@ -644,34 +657,52 @@
     height: 318px; */
   }
 }
+@media (max-width: 550px) {
+  .header__links-mobile {
+    width: 100%;
+    left: 0;
+    top: 120px;
+  }
+}
+@media (min-width: 551px) and (max-width: 600px) {
+  .header__links-mobile {
+    top: 150px;
+    left: 20px;
+  }
+}
+
 @media (max-width: 600px) {
-    .header__container {
-        flex-direction: column;
-      }
-      .header__wrapper {
-        margin-top: 20px;
-      }
-    .header__wrapper {
-        flex-direction: row-reverse;
-    }
-    .header__nav {
-        flex-direction: row-reverse;
-    }
+  .header__menu {
+    margin-top: 20px;
+  }
+
+  .header__container {
+    flex-direction: column;
+  }
+  .header__wrapper {
+    margin-top: 20px;
+  }
+  .header__wrapper {
+    flex-direction: row-reverse;
+  }
+  .header__nav {
+    flex-direction: row-reverse;
+  }
 }
 @media (max-width: 500px) {
-    .header__wrapper button:first-of-type svg {
-        width: 72px;
-        height: 36px;
-    }
-    .header__nav button:last-of-type {
-        width: 60px;
-        height: 36px;
-        font-size: 6px;
-        padding: 5px;
-    }
-    .button__wrapper button:last-of-type svg {
-       display: none;
-    }
+  .header__menu button:first-of-type svg {
+    width: 72px;
+    height: 36px;
+  }
+  .header__nav button:last-of-type {
+    width: 60px;
+    height: 36px;
+    font-size: 6px;
+    padding: 5px;
+  }
+  .button__wrapper button:last-of-type svg {
+    display: none;
+  }
   .main .content__title {
     font-size: 48px;
     margin-top: 35px;
@@ -723,5 +754,152 @@
   .main__images img:last-of-type {
     width: 87.5px;
     height: 178px;
+  }
+}
+@media (max-width: 745px) and (min-width: 401px) {
+  .main .content__description {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+  }
+  .main .content__title {
+    font-family: "Comfortaa";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 36px;
+  }
+  .interface__title {
+    font-family: "Comfortaa";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 36px;
+    text-align: center;
+  }
+  .interface__paragraph,
+  .ability__paragraph,
+  .people p,
+  .footer__links a,
+  .project p,
+  .questions__item-text {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+  }
+  .ability__title,
+  .people h2 {
+    font-family: "Comfortaa";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 70px;
+    text-align: center;
+  }
+  .ability__subtitle {
+    font-family: "Comfortaa";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 36px;
+    text-transform: uppercase;
+  }
+  .people h3 {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 44px;
+    text-align: center;
+  }
+  .questions h2 {
+    font-family: "Comfortaa";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 45px;
+    text-align: center;
+  }
+  .questions h3 {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 44px;
+  }
+}
+@media (min-width: 401px) and (max-width: 560px) {
+  .main__images img:first-of-type {
+    width: 384.5px;
+    height: 228px;
+  }
+  .main__images img:last-of-type {
+    width: 87.5px;
+    height: 178px;
+  }
+}
+@media (max-width: 400px) {
+  .header__logo img {
+    width: 40px;
+    height: 40px;
+  }
+  .main .content__description {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .main .content__title {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 25px;
+  }
+  .interface__title {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 25px;
+    text-align: center;
+  }
+  .interface__paragraph,
+  .ability__paragraph,
+  .people p,
+  .footer__links a,
+  .project p,
+  .questions__item-text {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+  }
+  .ability__title,
+  .people h2,
+  .questions h2 {
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 25px;
+    text-align: center;
+    
+  }
+  .ability__subtitle, .people h3, .questions h3{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
   }
 }

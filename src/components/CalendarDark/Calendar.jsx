@@ -43,6 +43,11 @@ const Calendar = () => {
   const [peopleState, setPeopleState] = useSwitcher({ 0: true }, dumpSwitchCb);
 
   const [showMenu, setShowMenu] = useState(true);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+  
+  const menuHandler = () => {
+    setShowMobileMenu((prev) => !prev);
+  };
 
   useEffect(() => {
     const screenWidth = window.screen.width;
@@ -61,22 +66,10 @@ const Calendar = () => {
                 <img width={60} height={60} src="images/logo.svg" alt="Logo" />
               </div>
               <div
-                className={`${showMenu} ? ${classes.header__wrapper} : ${classes.header__menu}`}
+                className={`${showMenu ? classes.header__wrapper : classes.header__menu}`}
               >
-                {!showMenu && (
-                  <button>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="white"
-                      height="48"
-                      width="48"
-                    >
-                      <path d="M6 36v-3h36v3Zm0-10.5v-3h36v3ZM6 15v-3h36v3Z" />
-                    </svg>
-                  </button>
-                )}
-                {showMenu && (
-                  <ul className={classes.header__links}>
+                {(showMenu || showMobileMenu) && (
+                  <ul className={`${showMobileMenu ? classes['header__links-mobile'] : classes.header__links}`}>
                     <li>
                       <a href="#">Главная</a>
                     </li>
@@ -93,6 +86,18 @@ const Calendar = () => {
                       <a href="#">Достижения</a>
                     </li>
                   </ul>
+                )}
+                {!showMenu && (
+                  <button onClick={menuHandler}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="white"
+                      height="48"
+                      width="48"
+                    >
+                      <path d="M6 36v-3h36v3Zm0-10.5v-3h36v3ZM6 15v-3h36v3Z" />
+                    </svg>
+                  </button>
                 )}
                 <div className={classes.header__nav}>
                   <button type={"button"}>
@@ -949,7 +954,7 @@ const Calendar = () => {
         </section>
         <footer className={classes.footer}>
           <div className={classes.footer__links}>
-            <img width={112} height={112} src="images/logo.svg" alt="Logo" />
+            {showMenu && <img width={112} height={112} src="images/logo.svg" alt="Logo" />}
             <ul>
               <li>
                 <a href="#">Скачать приложение</a>
