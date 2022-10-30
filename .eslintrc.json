@@ -35,13 +35,16 @@
             }
         ],
         "import/prefer-default-export": "off",
-        "react/react-in-jsx-scope": "off",
         "indent": ["error", 4],
         "react/jsx-indent": ["error", 4],
         "react/jsx-indent-props": ["error", 4],
         "react/jsx-props-no-spreading": "off",
+        "linebreak-style": ["off", "unix"],
+        "no-shadow": "off",
+        "no-unused-vars": "warn",
+        "react/react-in-jsx-scope": "off",
+        "react/forbid-prop-types": "off",
         "intreact/jsx-curly-brace-presence": "off",
-        "react/jsx-curly-brace-presence": "off",
         "jsx-a11y/img-redundant-alt": "off",
         "jsx-a11y/anchor-is-valid": "off"
     }

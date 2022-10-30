@@ -1,9 +1,67 @@
 :root {
-    --primaryColor: #FFF;
+    --primaryColor: #fff4e4;
+    --secondaryColor: white;
+    --dashboardNumbersColor: #424242;
+
+    --violetCardColor: linear-gradient(106.68deg, #AC5EEA 14.35%, #7820BE 83.41%);
+    --yellowCardColor: linear-gradient(106.68deg, #F5D83D 14.35%, #E89822 83.41%);
+    --greenCardColor: linear-gradient(104.82deg, #C0EC61 14.75%, #E0E32E 84.54%);
+
+    --violetCardShadow: rgba(96, 18, 156, 0.31);
+    --yellowCardShadow: rgba(190, 119, 11, 0.31);
+    --greenCardShadow: rgba(46, 156, 18, 0.31);
 }
 
 #root[data-theme='dark'] {
-    --primaryColor: #000;
+    --primaryColor: #1f1f1f;
+    --textColor: white;
+    --secondaryColor: #616161;
+    --dashboardNumbersColor: white;
+
+    --mainCardColor: #757575;
+    --violetCardColor: var(--mainCardColor);
+    --yellowCardColor: var(--mainCardColor);
+    --greenCardColor: var(--mainCardColor);
+
+    --mainCardShadow: rgba(0, 0, 0, 0.31);
+    --violetCardShadow: var(--mainCardShadow);
+    --yellowCardShadow: var(--mainCardShadow);
+    --greenCardShadow: var(--mainCardShadow);
+
+    /* bind colors */
+    --primaryColor: #FFF;
+    --primaryColorShade1: #CDCDCD;
+    --primaryColorShade2: #616161;
+
+    --secondaryColor: #FFF8EE;
+    --secondaryColorShade1: #FFF4E2;
+    --secondaryColorShade2: #FFE0B2;
+
+    --contrastColor: #1F1F1F;
+    --contrastColorShade1: #424242;
+
+}
+
+#root[data-theme='light'] {
+    --primaryOrPrimaryShade2: var(--primaryColor);
+    --secondaryShade1OrPrimaryShade2: var(--secondaryColorShade1);
+    --contrastOrPrimary: var(--contrastColor);
+    --primaryOrContrast: var(--primaryColor);
+    --secondaryOrContrastShade1: var(--secondaryColor);
+    --secondaryShade1OrConstrast: var(--secondaryColorShade1);
+
+    --inputBorderColor: rgba(0, 0, 0, 0.1);
+}
+
+#root[data-theme='dark'] {
+    --primaryOrPrimaryShade2: var(--primaryColorShade2);
+    --secondaryShade1OrPrimaryShade2: var(--primaryColorShade2);
+    --contrastOrPrimary: var(--primaryColor);
+    --primaryOrContrast: var(--contrastColor);
+    --secondaryOrContrastShade1: var(--contrastColorShade1);
+    --secondaryShade1OrConstrast: var(--contrastColor);
+
+    --inputBorderColor: rgba(255, 255, 255, 0.1);
 }
 
 #root {

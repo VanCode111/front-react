@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&display=swap');
 
+/* Grid Layouts style */
+
 .dashboard {
     font-family: 'Nunito', sans-serif;
-    background-color: #fff4e4;
+    background-color: var(--primaryColor);
+}
+
+.dashboard h3 {
+    color: var(--textColor);
 }
 
 .heading {
     font-size: 24px;
     font-weight: 700;
+    color: var(--textColor);
 }
 
 .mainStatistics {
@@ -18,20 +25,20 @@
 }
 
 .mainCardViolet {
-    background: linear-gradient(106.68deg, #AC5EEA 14.35%, #7820BE 83.41%);
-    box-shadow: 0px 15px 30px rgba(96, 18, 156, 0.31);
+    background: var(--violetCardColor);
+    box-shadow: 0px 15px 30px var(--violetCardShadow);
 }
-  
+
 .mainCardYellow {
-    background: linear-gradient(106.68deg, #F5D83D 14.35%, #E89822 83.41%);
-    box-shadow: 0px 15px 30px rgba(190, 119, 11, 0.31);
+    background: var(--yellowCardColor);
+    box-shadow: 0px 15px 30px var(--yellowCardShadow);
 }
 
 .mainCardGreen {
-    background: linear-gradient(104.82deg, #C0EC61 14.75%, #E0E32E 84.54%);
-    box-shadow: 0px 15px 30px rgba(46, 156, 18, 0.31);
+    background: var(--greenCardColor);
+    box-shadow: 0px 15px 30px var(--greenCardShadow);
 }
-  
+
 .mainCard h3 {
     display: block;
 }
@@ -69,23 +76,43 @@
     bottom: 16px;
 }
 
+/* secondaryItems Grid Layout */
+
 .secondaryItems {
     margin-top: 60px;
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template: 
+        "circleCard genderCard targetCard" auto
+        "circleCard ageCard targetCard" 1fr /
+        4fr 5fr 3fr;
+    gap: 20px 40px;
 }
 
-.itemsContainer {
-    display: flex;
-    flex-direction: column;
-    width: 630px;
-    gap: 20px;
-    margin: 0 40px 0 0;
+.circleCard {
+    grid-area: circleCard;
+}
+
+.genderCard {
+    grid-area: genderCard;
+}
+
+.ageCard {
+    grid-area: ageCard;
+    height: 100%;
+}
+
+.targetCard {
+    grid-area: targetCard;
 }
 
 .bars {
     display: flex;
     justify-content: space-around;
+}
+
+.ageCard .bars {
+    width: 330px;
+    align-self: center;
 }
 
 .title {
@@ -105,4 +132,27 @@
     flex-direction: column;
     gap: 20px;
     margin-bottom: 15px;
+}
+
+/* CircleChart style */
+
+.percents {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.percents > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.value {
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    color: var(--dashboardNumbersColor);
+    opacity: 0.5;
 }

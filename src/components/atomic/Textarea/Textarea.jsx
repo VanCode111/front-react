@@ -8,7 +8,7 @@ export const Textarea = ({
     className = '',
     ...props
 }) => (
-    <textarea className={cn(classes.textarea, className)} cols={'30'} rows={'8'} {...props} />
+    <textarea className={cn(classes.textarea, className)} cols="30" rows="8" {...props} />
 );
 
 Textarea.propTypes = {

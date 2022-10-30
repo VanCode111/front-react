@@ -1,0 +1,22 @@
+.graphicContainer {
+    display: flex;
+    margin-top: 25px;
+}
+
+.graphic {
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+}
+
+.graphic canvas {
+    flex: 1;
+}

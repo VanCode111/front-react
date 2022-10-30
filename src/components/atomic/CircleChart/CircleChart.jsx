@@ -1,9 +1,9 @@
 import React from 'react';
-
 import {
     Chart as ChartJS, ArcElement, Tooltip, Legend,
 } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+import PropTypes from 'prop-types';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -18,9 +18,11 @@ const options = {
     },
 };
 
-const CircleChart = ({ data, colors }) => {
+export const CircleChart = ({
+    data, colors, labels, className, ...props
+}) => {
     const dataSet = {
-        labels: ['Red', 'Blue'],
+        labels,
         datasets: [
             {
                 label: '# of Votes',
@@ -40,4 +42,9 @@ const CircleChart = ({ data, colors }) => {
     return <Doughnut data={dataSet} options={options} />;
 };
 
-export default CircleChart;
+CircleChart.propTypes = {
+    data: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
+    colors: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    labels: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    className: PropTypes.string,
+};
