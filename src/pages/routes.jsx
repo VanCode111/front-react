@@ -4,6 +4,7 @@ import { useTheme } from '../hooks/useTheme';
 
 import { Main } from './main';
 import { DashBoard } from './dashboard';
+import { Achievements } from './achievements';
 import { Account } from './account';
 import { Login } from './login';
 
@@ -20,6 +21,9 @@ const routes = [
         element: <DashBoard />,
     },
     {
+        path: '/achievements',
+        element: <Achievements />,
+    }, {
         path: '/account',
         element: <Account />,
     },

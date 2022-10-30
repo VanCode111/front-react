@@ -15,7 +15,7 @@ export const ListItem = ({
 );
 
 ListItem.propTypes = {
-    children: PropTypes.element.isRequired,
+    children: PropTypes.string,
     color: PropTypes.string.isRequired,
     className: PropTypes.string,
 };

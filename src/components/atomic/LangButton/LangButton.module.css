@@ -1,0 +1,46 @@
+.wrapper {
+    border: 2px solid #FFE0B2;
+    border-radius: 8px;
+    width: 90px;
+    overflow: hidden;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 3px 15px;
+}
+
+button:hover {
+    background: #FFF7EB;
+}
+
+.chooseButton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.label {
+    font-family: 'Nunito';
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 2.375rem;
+}
+
+.langItem {
+    border-top: 2px solid #FFE0B2;
+}
+
+.triangleIcon {
+    transition: transform 0.3s ease-in-out;
+}
+
+.triangleIcon_open {
+    transform: rotate(180deg);
+}
+
+.triangleIcon_close {
+    transform: rotate(180deg);
+}
