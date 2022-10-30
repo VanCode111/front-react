@@ -7,6 +7,7 @@ import LogoIcon from './assets/logo.svg';
 import OutIcon from './assets/out.svg';
 
 import styles from './Header.module.css';
+import { Link } from 'react-router-dom';
 
 export const Header = ({ className, ...props }) => (
     <header className={cn(className, styles.header)} {...props}>
@@ -14,16 +15,16 @@ export const Header = ({ className, ...props }) => (
             <img src={LogoIcon} alt="логотип" />
             <nav className={styles.navigation}>
                 <ul className={styles.list}>
-                    <li className={styles.item}><a className={styles.link} href="/">Главная</a></li>
-                    <li className={styles.item}><a className={styles.link} href="/">Календарь жизни</a></li>
-                    <li className={styles.item}><a className={styles.link} href="/">Цели</a></li>
-                    <li className={styles.item}><a className={styles.link} href="/">Достижения</a></li>
-                    <li className={styles.item}><a className={styles.link} href="/">Дневник</a></li>
+                    <li className={styles.item}><Link className={styles.link} to="/">Главная</Link></li>
+                    <li className={styles.item}><Link className={styles.link} to="/">Календарь жизни</Link></li>
+                    <li className={styles.item}><Link className={styles.link} to="/">Цели</Link></li>
+                    <li className={styles.item}><Link className={styles.link} to="/">Достижения</Link></li>
+                    <li className={styles.item}><Link className={styles.link} to="/">Дневник</Link></li>
                     <li className={styles.item}>
-                        <a className={styles.link} href="/">
+                        <Link className={styles.link} to="/">
                             ЛК
                             <img src={OutIcon} alt="вход" />
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </nav>
