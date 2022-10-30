@@ -7,10 +7,12 @@ import { DashBoard } from './dashboard';
 import { Achievements } from './achievements';
 import { Account } from './account';
 import { Login } from './login';
+import { CalendarPage } from './calendar';
+import { About } from './about';
 
 import Calendar from '../components/CalendarDark/Calendar';
 import { About } from './about';
-import { ThemeContext } from './context';
+import { ThemeContext } from './context';ture/calendarPage
 
 const routes = [
     {
@@ -40,6 +42,10 @@ const routes = [
         path: '/about',
         element: <About />,
     },
+    {
+        path: '/calendar',
+        element: <CalendarPage />,
+    }
 ];
 
 export const AppRouter = () => {
