@@ -4,7 +4,7 @@
     display: grid;
     grid-template-columns: 132px 1fr;
     grid-template-rows: auto 1fr auto;
-    background: #FFF4E2;
+    background: var(--primaryColor);
 }
 
 .header {

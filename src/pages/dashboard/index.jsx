@@ -17,6 +17,30 @@ import blackHuman from './assets/human.svg';
 
 import styles from './dashboard.module.css';
 
+const statistic = {
+    registeredUsers: 4040,
+    usersOnline: 2050,
+    usersInApp: 1040,
+    registrations: 3040,
+    usersByDevice: {
+        phone: 1268,
+        computer: 2100,
+    },
+    gender: {
+        men: 2567,
+        women: 2076,
+    },
+    agePersentage: {
+        before18: 36,
+        from18To21: 28,
+        from21To35: 7,
+        from35To60: 19,
+    },
+    targetAudience: [
+        36, 28, 7, 19, 6,
+    ],
+};
+
 export const DashBoard = () => (
     <AdminPage>
         <div className={styles.dashboard}>
@@ -28,7 +52,7 @@ export const DashBoard = () => (
                     </h3>
                     <img src={zigzag} alt="Зигзаг" className={styles.mainZigzag} />
                     <div className={styles.mainCount}>
-                        <span className={styles.mainNumber}>4040</span>
+                        <span className={styles.mainNumber}>{statistic.registeredUsers}</span>
                         <img src={human} alt="" />
                     </div>
                 </MainCard>
@@ -38,7 +62,7 @@ export const DashBoard = () => (
                     </h3>
                     <img src={zigzag} alt="Зигзаг" className={styles.mainZigzag} />
                     <div className={styles.mainCount}>
-                        <span className={styles.mainNumber}>2050</span>
+                        <span className={styles.mainNumber}>{statistic.usersOnline}</span>
                         <img src={human} alt="" />
                     </div>
                 </MainCard>
@@ -48,7 +72,7 @@ export const DashBoard = () => (
                     </h3>
                     <img src={zigzag} alt="Зигзаг" className={styles.mainZigzag} />
                     <div className={styles.mainCount}>
-                        <span className={styles.mainNumber}>1040</span>
+                        <span className={styles.mainNumber}>{statistic.usersInApp}</span>
                         <img src={human} alt="" />
                     </div>
                 </MainCard>
@@ -58,7 +82,7 @@ export const DashBoard = () => (
                     </h3>
                     <img src={zigzag} alt="Зигзаг" className={styles.mainZigzag} />
                     <div className={styles.mainCount}>
-                        <span className={styles.mainNumber}>3040</span>
+                        <span className={styles.mainNumber}>{statistic.registrations}</span>
                         <img src={human} alt="" />
                     </div>
                 </MainCard>
@@ -68,21 +92,48 @@ export const DashBoard = () => (
                     <h3 className={styles.title}>
                         Обхват по устройствам:
                     </h3>
-                    <CircleChart data={[36, 64]} colors={['#AB5DE9', '#F8D564']} labels={['Телефон', 'Компьютер']} />
+                    <CircleChart
+                        data={
+                            [
+                                Math.round((statistic.usersByDevice.phone
+                                / (statistic.usersByDevice.phone
+                                + statistic.usersByDevice.computer)) * 100),
+                                Math.round((statistic.usersByDevice.computer
+                                / (statistic.usersByDevice.phone
+                                + statistic.usersByDevice.computer)) * 100),
+                            ]
+                        }
+                        colors={['#AB5DE9', '#F8D564']}
+                        labels={['Телефон', 'Компьютер']}
+                    />
                     <div className={styles.percents}>
                         <div>
                             <ListItem color="#AB5DE9">Телефон</ListItem>
-                            <span className={styles.value}>36%</span>
                             <span className={styles.value}>
-                                1268
+                                {
+                                    Math.round((statistic.usersByDevice.phone
+                                    / (statistic.usersByDevice.phone
+                                    + statistic.usersByDevice.computer)) * 100)
+                                }
+                                %
+                            </span>
+                            <span className={styles.value}>
+                                {statistic.usersByDevice.phone}
                                 <img src={blackHuman} alt="" />
                             </span>
                         </div>
                         <div>
                             <ListItem color="#F8D564">Компьютер</ListItem>
-                            <span className={styles.value}>64%</span>
                             <span className={styles.value}>
-                                2100
+                                {
+                                    Math.round((statistic.usersByDevice.computer
+                                    / (statistic.usersByDevice.phone
+                                    + statistic.usersByDevice.computer)) * 100)
+                                }
+                                %
+                            </span>
+                            <span className={styles.value}>
+                                {statistic.usersByDevice.computer}
                                 <img src={blackHuman} alt="" />
                             </span>
                         </div>
@@ -92,18 +143,18 @@ export const DashBoard = () => (
                     <h3 className={styles.title}>
                         Пол аудитории
                     </h3>
-                    <HorizontalProgressBar className={styles.progressBar} color="#AB5DE9" label="М" maxValue={3000} curValue={2567} />
-                    <HorizontalProgressBar className={styles.progressBar} color="#F8D564" label="Ж" maxValue={3000} curValue={2076} />
+                    <HorizontalProgressBar className={styles.progressBar} color="#AB5DE9" label="М" maxValue={3000} curValue={statistic.gender.men} />
+                    <HorizontalProgressBar className={styles.progressBar} color="#F8D564" label="Ж" maxValue={3000} curValue={statistic.gender.women} />
                 </Card>
                 <Card className={styles.ageCard}>
                     <h3 className={styles.title}>
                         Возраст аудитории:
                     </h3>
                     <div className={styles.bars}>
-                        <VerticalProgressBar color="#AB5DE9" label="до 18" percent={36} />
-                        <VerticalProgressBar color="#AB5DE9" label="18-21" percent={28} />
-                        <VerticalProgressBar color="#AB5DE9" label="21-35" percent={7} />
-                        <VerticalProgressBar color="#AB5DE9" label="35-60" percent={19} />
+                        <VerticalProgressBar color="#AB5DE9" label="до 18" percent={statistic.agePersentage.before18} />
+                        <VerticalProgressBar color="#AB5DE9" label="18-21" percent={statistic.agePersentage.from18To21} />
+                        <VerticalProgressBar color="#AB5DE9" label="21-35" percent={statistic.agePersentage.from21To35} />
+                        <VerticalProgressBar color="#AB5DE9" label="35-60" percent={statistic.agePersentage.from35To60} />
                     </div>
                 </Card>
                 <Card className={styles.targetCard}>
@@ -118,11 +169,11 @@ export const DashBoard = () => (
                         <ListItem color="#F280B0">...</ListItem>
                     </ul>
                     <div className={styles.bars}>
-                        <VerticalProgressBar color="#AB5DE9" percent={36} point />
-                        <VerticalProgressBar color="#F8D564" percent={28} point />
-                        <VerticalProgressBar color="#E89922" percent={7} point />
-                        <VerticalProgressBar color="#C3EC5E" percent={19} point />
-                        <VerticalProgressBar color="#F280B0" percent={6} point />
+                        <VerticalProgressBar color="#AB5DE9" percent={statistic.targetAudience[0]} point />
+                        <VerticalProgressBar color="#F8D564" percent={statistic.targetAudience[1]} point />
+                        <VerticalProgressBar color="#E89922" percent={statistic.targetAudience[2]} point />
+                        <VerticalProgressBar color="#C3EC5E" percent={statistic.targetAudience[3]} point />
+                        <VerticalProgressBar color="#F280B0" percent={statistic.targetAudience[4]} point />
                     </div>
                 </Card>
             </div>
