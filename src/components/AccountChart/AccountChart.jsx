@@ -26,6 +26,9 @@ export const options = {
     plugins: {
         legend: {
             position: 'top',
+            labels: {
+                color: 'var(--primaryOrConstast)',
+            },
         },
     },
 };

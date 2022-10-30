@@ -1,4 +1,4 @@
-import React, { createContext, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { useRoutes } from 'react-router-dom';
 import { useTheme } from '../hooks/useTheme';
 
@@ -7,6 +7,7 @@ import { DashBoard } from './dashboard';
 import { Achievements } from './achievements';
 import { Account } from './account';
 import { Login } from './login';
+import { MyAccount } from './myacc';
 
 import Calendar from '../components/CalendarDark/Calendar';
 import { About } from './about';
@@ -39,6 +40,10 @@ const routes = [
     {
         path: '/about',
         element: <About />,
+    },
+    {
+        path: '/myacc',
+        element: <MyAccount />,
     },
 ];
 
