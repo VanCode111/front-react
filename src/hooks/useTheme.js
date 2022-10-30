@@ -1,12 +1,21 @@
+import { useCallback, useEffect, useState } from 'react';
 import { storage } from '../classes/Storage';
 
 const THEME_KEY = 'theme';
 
 export function useTheme() {
-    const theme = storage.get(THEME_KEY);
+    console.log(storage.get(THEME_KEY));
+    const [theme, setTheme] = useState(storage.get(THEME_KEY)?.theme);
     if (!theme) {
-        storage.set(THEME_KEY, 'white');
+        setTheme('light');
     }
-
-    document.getElementById('root').setAttribute('data-theme', theme);
+    useEffect(() => {
+        if (!theme) return;
+        document.getElementById('root').setAttribute('data-theme', theme);
+        storage.set(THEME_KEY, {
+            theme,
+        });
+    }, [theme]);
+    console.log('theme', theme);
+    return { theme, setTheme };
 }

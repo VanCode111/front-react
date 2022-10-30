@@ -17,7 +17,7 @@ export const About = () => {
                 <h5 className={classes.title}>О себе</h5>
                 <Form onSubmit={onSubmit} className={classes.form}>
                     <Form.Option
-                        variant={'secondary'}
+                        variant="secondary"
                         label={(
                             <span className={classes.label}>
                                 <PersonIcon />
@@ -25,8 +25,8 @@ export const About = () => {
                                 Чем вы занимаетесь?
                             </span>
                         )}
-                        name={'doing'}
-                        placeholder={'Учусь'}
+                        name="doing"
+                        placeholder="Учусь"
                         type="password"
                         className={classes.input}
                         data={[
@@ -41,7 +41,7 @@ export const About = () => {
                         ]}
                     />
                     <Form.Option
-                        variant={'secondary'}
+                        variant="secondary"
                         label={(
                             <span className={classes.label}>
                                 <PersonIcon />
@@ -49,8 +49,8 @@ export const About = () => {
                                 Кем вы являетесь?
                             </span>
                         )}
-                        name={'studentOrWho'}
-                        placeholder={'Учусь'}
+                        name="studentOrWho"
+                        placeholder="Учусь"
                         type="password"
                         className={classes.input}
                         data={[

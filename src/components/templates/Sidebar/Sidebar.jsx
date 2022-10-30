@@ -7,11 +7,11 @@ import { MenuButton } from '../../atomic';
 import styles from './Sidebar.module.css';
 
 export const Sidebar = ({ className, ...props }) => (
-    <aside className={styles.sidebar} {...props}>
+    <div className={styles.sidebar} {...props}>
         <MenuButton link="/" type="lk" />
         <MenuButton link="/" type="statistics" />
         <MenuButton link="/" type="users" />
-    </aside>
+    </div>
 );
 
 Sidebar.propTypes = {

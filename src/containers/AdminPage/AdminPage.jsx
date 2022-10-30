@@ -1,16 +1,17 @@
 import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
+import { Header, Sidebar } from '../../components';
 
 import classes from './AdminPage.module.css';
 
 export const AdminPage = ({ children, title = null, disablePadding = false }) => (
     <div className={classes.wrapper}>
         <header className={classes.header}>
-            header content
+            <Header />
         </header>
         <aside className={classes.sidebar}>
-            sidebar content
+            <Sidebar />
         </aside>
         <main className={cn({
             [classes.main]: !disablePadding,
@@ -20,7 +21,7 @@ export const AdminPage = ({ children, title = null, disablePadding = false }) =>
             {children}
         </main>
         <footer className={classes.footer}>
-            footer
+            Календарь жизни, 2022
         </footer>
     </div>
 );

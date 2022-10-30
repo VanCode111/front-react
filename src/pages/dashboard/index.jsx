@@ -18,10 +18,8 @@ import blackHuman from './assets/human.svg';
 import styles from './dashboard.module.css';
 
 export const DashBoard = () => (
-    <div className={styles.dashboard}>
-        <Header className={styles.header} />
-        <Sidebar className={styles.sidebar} />
-        <main>
+    <AdminPage>
+        <div className={styles.dashboard}>
             <h1 className={styles.heading}>Статистика</h1>
             <div className={styles.mainStatistics}>
                 <MainCard className={styles.mainCardViolet}>
@@ -128,6 +126,6 @@ export const DashBoard = () => (
                     </div>
                 </Card>
             </div>
-        </main>
-    </div>
+        </div>
+    </AdminPage>
 );

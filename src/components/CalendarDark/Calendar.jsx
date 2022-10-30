@@ -31,7 +31,7 @@ const Calendar = () => (
                             </li>
                         </ul>
                         <div className={classes.header__nav}>
-                            <button type={'button'}>
+                            <button type="button">
                                 <span>Вход</span>
                                 <svg
                                     width="32"
@@ -60,7 +60,7 @@ const Calendar = () => (
                                     />
                                 </svg>
                             </button>
-                            <button type={'button'}>
+                            <button type="button">
                                 <svg
                                     width="104"
                                     height="52"
@@ -123,7 +123,7 @@ const Calendar = () => (
                                     />
                                 </svg>
                             </button>
-                            <button type={'button'}>
+                            <button type="button">
                                 <span>RU</span>
                                 <svg
                                     width="16"
@@ -155,7 +155,7 @@ const Calendar = () => (
                                 заданий требует анализа вывода текущих
                                 активов.
                             </p>
-                            <button className={classes.content__button} type={'button'}>
+                            <button className={classes.content__button} type="button">
                                 Скачать
                             </button>
                             <div className={classes.content__links}>
@@ -324,7 +324,7 @@ const Calendar = () => (
                 </p>
                 <div className={classes.interface__switch}>
                     <button
-                        type={'button'}
+                        type="button"
                         className={
                             `${classes['interface__switch-btn']
                             } ${
@@ -333,7 +333,7 @@ const Calendar = () => (
                     >
                         Desktop
                     </button>
-                    <button className={classes['interface__switch-btn']} type={'button'}>
+                    <button className={classes['interface__switch-btn']} type="button">
                         Mobile
                     </button>
                 </div>
@@ -373,7 +373,7 @@ const Calendar = () => (
                     оппонентов способствует подготовке и реализации анализа
                     существующих паттернов поведения.
                 </div>
-                <button className={classes.ability__btn} type={'submit'}>
+                <button className={classes.ability__btn} type="submit">
                     Попробовать бесплатно
                 </button>
             </section>
@@ -407,19 +407,19 @@ const Calendar = () => (
                     </div>
                 </div>
                 <div className={classes.people__buttons}>
-                    <button type={'submit'} />
-                    <button type={'submit'} />
-                    <button type={'submit'} />
+                    <button type="submit" />
+                    <button type="submit" />
+                    <button type="submit" />
                 </div>
             </section>
             <section className={classes.questions}>
                 <h2>FAQ Часто задаваемые вопросы</h2>
                 <div className={classes['question-hidden']}>
-                    <button type={'button'}>?</button>
+                    <button type="button">?</button>
                     <h3>Можно ли скачать приложение на телефон?</h3>
                 </div>
                 <div className={classes['question-extended']}>
-                    <button type={'button'}>?</button>
+                    <button type="button">?</button>
 
                     <div>
                         <h3>Это платное приложение?</h3>
@@ -440,11 +440,11 @@ const Calendar = () => (
                     </div>
                 </div>
                 <div className={classes['question-hidden']}>
-                    <button type={'button'}>?</button>
+                    <button type="button">?</button>
                     <h3>Что делать если забыл пароль?</h3>
                 </div>
                 <div className={classes['question-extended']}>
-                    <button type={'button'}>?</button>
+                    <button type="button">?</button>
 
                     <div>
                         <h3>Будет ли синхронизация на другой телефон?</h3>

@@ -23,7 +23,7 @@ export const Login = () => {
                             Введите логин
                         </span>
                     )}
-                    name={'login'}
+                    name="login"
                     className={styles.input}
                 />
                 <Form.Input
@@ -35,7 +35,7 @@ export const Login = () => {
                             Введите логин
                         </span>
                     )}
-                    name={'password'}
+                    name="password"
                     type="password"
                     className={styles.input}
                 />
