@@ -1,0 +1,20 @@
+.listItem {
+  background: #f4f4f4;
+  border-radius: 7px;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.listItem + .listItem {
+  margin-top: 10px;
+}
+
+.itemValue {
+  border: 2px solid #42424247;
+  border-radius: 12px;
+  padding: 14px;
+  width: 100%;
+  flex-grow: 1;
+}
