@@ -1,5 +1,5 @@
 .wrapper {
-    border: 2px solid #FFE0B2;
+    border: 2px solid var(--livedBgColor);
     border-radius: 8px;
     width: 90px;
     overflow: hidden;
@@ -13,7 +13,7 @@ button {
 }
 
 button:hover {
-    background: #FFF7EB;
+    background: var(--buttonBgColor);
 }
 
 .chooseButton {
@@ -27,14 +27,19 @@ button:hover {
     font-weight: 500;
     font-size: 1.5rem;
     line-height: 2.375rem;
+    color: var(--primaryFontColor);
 }
 
 .langItem {
-    border-top: 2px solid #FFE0B2;
+    border-top: 2px solid var(--livedBgColor);
 }
 
 .triangleIcon {
     transition: transform 0.3s ease-in-out;
+}
+
+.triangleIcon path {
+    fill: var(--primaryFontColor);
 }
 
 .triangleIcon_open {

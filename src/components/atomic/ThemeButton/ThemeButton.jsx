@@ -15,8 +15,6 @@ export const ThemeButton = ({ className, ...props }) => {
         setTheme(theme === 'light' ? 'dark' : 'light');
     };
 
-    console.log('THEME', theme);
-
     return (
         <button
             type="button"

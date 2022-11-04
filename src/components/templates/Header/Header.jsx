@@ -2,12 +2,12 @@ import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom';
 import { LangButton, ThemeButton } from '../../atomic';
 import LogoIcon from './assets/logo.svg';
 import OutIcon from './assets/out.svg';
 
 import styles from './Header.module.css';
-import { Link } from 'react-router-dom';
 
 export const Header = ({ className, ...props }) => (
     <div className={cn(className, styles.header)} {...props}>
