@@ -1,3 +1,7 @@
+.page {
+    background: var(--pageBgColor);
+}
+
 .container {
     max-width: 1600px;
     margin: 0 auto;
@@ -10,7 +14,7 @@
     font-size: 4rem;
     line-height: 4.375rem;
     text-align: center;
-    color: #0A0A0A;
+    color: var(--primaryFontColor);
     margin-bottom: 75px;
 }
 
@@ -36,31 +40,31 @@
     font-weight: 500;
     font-size: 2.25rem;
     line-height: 3rem;
-    color: #E0E0E0;
+    color: var(--dimFontColor);
 }
 
 .item_current {
-    background: #FFF7EB;
+    background: var(--currentBgColor);
 }
 
 .item_current .item__text {
-    color: #757575;
+    color: var(--currentFontColor);
 }
 
 .item_target {
-    border: 3px solid #C28327;
+    border: 3px solid var(--targetBorderColor);
 }
 
 .item_lived {
-    background: #FFE0B2;
+    background: var(--livedBgColor);
 }
 
 .item_lived .item__text {
-    color: #0A0A0A;
+    color: var(--mainFontColor);
 }
 
 .item_unlived.item_target {
-    border: 3px solid #FFE0B2;
+    border: 3px solid var(--livedBgColor);
 }
 
 .buttons {
@@ -74,12 +78,25 @@
     display: flex;
     align-items: center;
     gap: 24px;
+    background: var(--buttonBgColor);
     font-family: 'Nunito';
     font-weight: 500;
     font-size: 2.25rem;
     line-height: 3rem;
-    color: #0A0A0A;
-    border: 3px solid #FFE0B2;
+    color: var(--primaryFontColor);
+    border: 3px solid var(--livedBgColor);
     border-radius: 8px;
     padding: 14px 28px;
+}
+
+.removeBtn:hover, .addBtn:hover {
+    background: var(--buttonBgColor);
+}
+
+.removeIcon path {
+    stroke:var(--primaryFontColor);
+}
+
+.addIcon path {
+    stroke: var(--primaryFontColor);
 }

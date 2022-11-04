@@ -10,14 +10,15 @@ export const CalendarPage = () => {
     const [currentAge, setCurrentAge] = useState(26);
 
     return (
-        <div>
+        <div className={styles.page}>
             <Header />
             <div className={styles.container}>
                 <h1 className={styles.title}>Календарь жизни</h1>
                 <ul className={styles.list}>
-                    {years.map(item => (
+                    {years.map((item) => (
                         <li key={item.age}>
                             <button
+                                type="button"
                                 className={cn(styles.item, {
                                     [styles.item_target]: item.isTarget,
                                     [styles.item_current]: item.age === currentAge,
@@ -31,16 +32,16 @@ export const CalendarPage = () => {
                     ))}
                 </ul>
                 <div className={styles.buttons}>
-                    <button className={styles.removeBtn}>
+                    <button className={styles.removeBtn} type="button">
                         Убрать год
-                        <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5 5.5L27 27.5M5 27.5L27 5.5" stroke="#424242" stroke-width="2" stroke-linecap="round"/>
+                        <svg className={styles.removeIcon} width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 5.5L27 27.5M5 27.5L27 5.5" stroke="#424242" strokeWidth="2" strokeLinecap="round" />
                         </svg>
                     </button>
-                    <button className={styles.addBtn}>
+                    <button className={styles.addBtn} type="button">
                         Добавить год
-                        <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 16.5H29M16 29.5V3.49999" stroke="#424242" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <svg className={styles.addIcon} width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 16.5H29M16 29.5V3.49999" stroke="#424242" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     </button>
                 </div>
