@@ -2,6 +2,7 @@
   display: flex;
   gap: 20px;
   align-items: center;
+  white-space: nowrap;
 }
 
 .inputLabel {
@@ -21,7 +22,7 @@
 
 .select {
   padding: 7px 30px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--inputBorderColor);
   border-radius: 12px;
   font-family: "Nunito";
   font-style: normal;
@@ -48,5 +49,4 @@
 .variant_secondary {
   font-weight: 700;
   font-size: 18px;
-  color: #424242;
 }

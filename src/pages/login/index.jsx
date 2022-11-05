@@ -22,7 +22,7 @@ export const Login = () => {
             color="orange"
             label={
               <span className={styles.label}>
-                <LockIcon /> Введите логин
+                <LockIcon className={'themeSvg'} /> Введите логин
               </span>
             }
             name="login"
@@ -34,7 +34,7 @@ export const Login = () => {
             color="orange"
             label={
               <span className={styles.label}>
-                <LockIcon /> Введите пароль
+                <LockIcon className={'themeSvg'} /> Введите пароль
               </span>
             }
             name="password"
