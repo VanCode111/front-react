@@ -31,3 +31,11 @@
 .variant_secondary:focus {
   border-width: 2px;
 }
+
+.color_orange {
+  border-color: #ffe0b2;
+}
+
+.color_orange:focus {
+  border-color: #ffe0b2;
+}
