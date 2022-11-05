@@ -44,3 +44,9 @@
 .select::-ms-expand {
   display: none;
 }
+
+.variant_secondary {
+  font-weight: 700;
+  font-size: 18px;
+  color: #424242;
+}

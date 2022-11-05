@@ -12,6 +12,7 @@ const UsersFilters = () => {
           name="id"
           label="ID:"
           placeholder="ID:"
+          variant="secondary"
           containerClass={classNames(styles.formItem, styles.userId)}
           className={styles.formInput}
           labelPosition="top"
@@ -21,6 +22,7 @@ const UsersFilters = () => {
           containerClass={classNames(styles.formItem, styles.lastName)}
           name="id"
           label="Фамилия:"
+          variant="secondary"
           placeholder="Фамилия:"
           className={styles.formInput}
           labelPosition="top"
@@ -29,6 +31,7 @@ const UsersFilters = () => {
         <Form.Input
           name="id"
           label="Имя:"
+          variant="secondary"
           placeholder="Имя:"
           containerClass={classNames(styles.formItem, styles.name)}
           className={styles.formInput}
@@ -37,6 +40,7 @@ const UsersFilters = () => {
         <Form.Input
           name="id"
           label="Почта:"
+          variant="secondary"
           placeholder="Почта:"
           containerClass={classNames(styles.formItem, styles.email)}
           className={styles.formInput}
@@ -45,13 +49,15 @@ const UsersFilters = () => {
         <Form.Input
           name="id"
           label="id"
+          variant="secondary"
           containerClass={classNames(styles.formItem, styles.date)}
           className={styles.formInput}
           labelPosition="top"
         />
-        <Form.Input
+        <Form.DatePicker
           name="id"
           label="id"
+          variant="secondary"
           containerClass={classNames(styles.formItem, styles.dateRegist)}
           className={styles.formInput}
           labelPosition="top"
