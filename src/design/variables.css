@@ -25,6 +25,17 @@
     --violetCardShadow: rgba(96, 18, 156, 0.31);
     --yellowCardShadow: rgba(190, 119, 11, 0.31);
     --greenCardShadow: rgba(46, 156, 18, 0.31);
+    /* bind colors */
+    --primaryColor1: #FFF;
+    --primaryColorShade1: #CDCDCD;
+    --primaryColorShade2: #616161;
+
+    --secondaryColor: #FFF8EE;
+    --secondaryColorShade1: #FFF4E2;
+    --secondaryColorShade2: #FFE0B2;
+
+    --contrastColor: #1F1F1F;
+    --contrastColorShade1: #424242;
 }
 
 #root[data-theme='dark'] {
@@ -57,26 +68,13 @@
     --violetCardShadow: var(--mainCardShadow);
     --yellowCardShadow: var(--mainCardShadow);
     --greenCardShadow: var(--mainCardShadow);
-
-    /* bind colors */
-    --primaryColor: #FFF;
-    --primaryColorShade1: #CDCDCD;
-    --primaryColorShade2: #616161;
-
-    --secondaryColor: #FFF8EE;
-    --secondaryColorShade1: #FFF4E2;
-    --secondaryColorShade2: #FFE0B2;
-
-    --contrastColor: #1F1F1F;
-    --contrastColorShade1: #424242;
-
 }
 
 #root[data-theme='light'] {
-    --primaryOrPrimaryShade2: var(--primaryColor);
+    --primaryOrPrimaryShade2: var(--primaryColor1);
     --secondaryShade1OrPrimaryShade2: var(--secondaryColorShade1);
     --contrastOrPrimary: var(--contrastColor);
-    --primaryOrContrast: var(--primaryColor);
+    --primaryOrContrast: var(--primaryColor1);
     --secondaryOrContrastShade1: var(--secondaryColor);
     --secondaryShade1OrConstrast: var(--secondaryColorShade1);
 
@@ -86,7 +84,7 @@
 #root[data-theme='dark'] {
     --primaryOrPrimaryShade2: var(--primaryColorShade2);
     --secondaryShade1OrPrimaryShade2: var(--primaryColorShade2);
-    --contrastOrPrimary: var(--primaryColor);
+    --contrastOrPrimary: var(--primaryColor1);
     --primaryOrContrast: var(--contrastColor);
     --secondaryOrContrastShade1: var(--contrastColorShade1);
     --secondaryShade1OrConstrast: var(--contrastColor);
@@ -95,5 +93,5 @@
 }
 
 #root {
-    background: var(--primaryColor);
+    background: var(--primaryColor1);
 }

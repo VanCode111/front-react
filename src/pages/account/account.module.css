@@ -1,6 +1,7 @@
 .graphicContainer {
     display: flex;
     margin-top: 25px;
+    max-width: 100%;
 }
 
 .graphic {

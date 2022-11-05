@@ -5,6 +5,7 @@ import { Card } from '../../containers';
 import { AccountChart } from '../../components/AccountChart/AccountChart';
 import { AccountForm } from '../../components/AccountForm/AccountForm';
 import { ChartCard } from '../../components/ChartCard/ChartCard';
+import { statistics } from '../../mock/account';
 
 import classes from './myacc.module.css';
 
@@ -15,7 +16,7 @@ export const MyAccount = () => (
             <Card className={classes.graphicContainer}>
                 <div className={classes.graphic}>
                     <h2 className={classes.title}>Ваша активность</h2>
-                    <AccountChart />
+                    <AccountChart activity={statistics.activity} />
                 </div>
                 <ChartCard />
             </Card>
