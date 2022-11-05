@@ -33,15 +33,6 @@
         "functions": "defaultArguments"
       }
     ],
-<<<<<<< HEAD
-    "import/prefer-default-export": "off",
-    "react/react-in-jsx-scope": "off",
-    "indent": ["error", 4],
-    "react/jsx-indent": ["error", 4],
-    "react/jsx-indent-props": ["error", 4],
-    "react/jsx-props-no-spreading": "off"
-  }
-=======
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module"
@@ -77,5 +68,4 @@
         "jsx-a11y/img-redundant-alt": "off",
         "jsx-a11y/anchor-is-valid": "off"
     }
->>>>>>> d1bc7f85db89676631fb8a7c24c6e4e2c4138839
 }
