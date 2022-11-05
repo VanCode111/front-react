@@ -10,19 +10,24 @@ import people from "./people.png";
 import business from "./business.png";
 import group from "./group.png";
 import useSwitcher from "./hooks/useSwitcher";
+import { useTheme } from '../../hooks/useTheme';
 
 const Calendar = () => {
-  // ligth
-  // const svgColor = '#000';
-  // const subColor = '#FFE0B2';
-  // const helperColor = '#C28327';
-  // const contrColor = '#FFF'
+  const {theme, setTheme} = useTheme();
+  let svgColor, subColor, helperColor, contrColor;
 
-  //dark
-  const svgColor = "#FFF";
-  const subColor = "#27496C";
-  const helperColor = "#FFF";
-  const contrColor = "#000";
+  if(theme === 'light') {
+    svgColor = '#000';
+    subColor = '#FFE0B2';
+    helperColor = '#C28327';
+    contrColor = '#FFF'
+  } else {
+    svgColor = "#FFF";
+    subColor = "#27496C";
+    helperColor = "#FFF";
+    contrColor = "#000";
+  }
+
 
   const dumpSwitchCb = useCallback(
     (prev, index) => ({
@@ -60,7 +65,7 @@ const Calendar = () => {
 
   return (
     <div className={classes.root}>
-      <div className={classes.promo}>
+      <div className={`${classes.promo} ${theme === 'dark' ? classes['promo--dark'] : ''}`}>
         <div className={classes.container}>
           <header className={classes.header}>
             <div className={classes.header__container}>
@@ -140,63 +145,33 @@ const Calendar = () => {
                     </svg>
                   </button>
                   <div className={classes.button__wrapper}>
-                    <button type={"button"}>
-                      <svg
-                        width="104"
-                        height="52"
-                        viewBox="0 0 104 52"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect
-                          x="1"
-                          y="1"
-                          width="102"
-                          height="50"
-                          rx="25"
-                          fill="#E0F0FF"
-                        />
-                        <circle cx="78" cy="26" r="18" fill="#27496C" />
-                        <path
-                          d="M87.4286 24.2857V19.1429"
-                          stroke="white"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d="M90 21.7143H84.8571"
-                          stroke="white"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d="M82.2857 14.8571V18.2857"
-                          stroke="white"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d="M84 16.5714H80.5714"
-                          stroke="white"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d="M87.5036 28.6357C85.8207 29.1076 84.0426 29.1231 82.3518 28.6805C80.661 28.238 79.1184 27.3533 77.8825 26.1175C76.6467 24.8816 75.762 23.3391 75.3195 21.6482C74.8769 19.9574 74.8924 18.1793 75.3643 16.4964C73.7051 16.9582 72.1959 17.8467 70.987 19.0733C69.7781 20.2998 68.9116 21.8218 68.4739 23.4874C68.0362 25.1531 68.0426 26.9044 68.4923 28.5668C68.9421 30.2293 69.8196 31.7449 71.0374 32.9626C72.2551 34.1804 73.7707 35.0579 75.4332 35.5077C77.0956 35.9574 78.8469 35.9638 80.5126 35.5261C82.1783 35.0884 83.7002 34.2219 84.9268 33.013C86.1533 31.8041 87.0418 30.2949 87.5036 28.6357Z"
-                          stroke="white"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <rect
-                          x="1"
-                          y="1"
-                          width="102"
-                          height="50"
-                          rx="25"
-                          stroke="#27496C"
-                          strokeWidth="2"
-                        />
+                    <button type={"button"} onClick={() => {setTheme(theme === 'light' ? 'dark' : 'light')}}>
+                     {theme === 'dark' ? <svg width="104" height="52" viewBox="0 0 104 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="1" y="1" width="102" height="50" rx="9" fill="#27496C"/>
+                      <circle cx="78" cy="26" r="18" fill="#A6BCD2"/>
+                      <path d="M87.4286 24.2854V19.1426" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M90 21.7144H84.8572" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M82.2858 14.8569V18.2855" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M84.0001 16.5713H80.5715" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M87.5036 28.6359C85.8207 29.1078 84.0426 29.1232 82.3518 28.6807C80.661 28.2381 79.1184 27.3535 77.8825 26.1176C76.6467 24.8818 75.762 23.3392 75.3195 21.6484C74.8769 19.9576 74.8924 18.1794 75.3643 16.4966C73.7051 16.9584 72.1959 17.8468 70.987 19.0734C69.7781 20.3 68.9116 21.8219 68.4739 23.4876C68.0362 25.1532 68.0426 26.9045 68.4923 28.567C68.9421 30.2294 69.8196 31.745 71.0374 32.9628C72.2551 34.1806 73.7707 35.0581 75.4332 35.5078C77.0956 35.9576 78.8469 35.9639 80.5126 35.5262C82.1783 35.0885 83.7002 34.2221 84.9268 33.0131C86.1533 31.8042 87.0418 30.295 87.5036 28.6359Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                      <rect x="1" y="1" width="102" height="50" rx="9" stroke="#A6BCD2" stroke-width="2"/>
                       </svg>
+                      : 
+                      <svg width="104" height="52" viewBox="0 0 104 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="1" y="1" width="102" height="50" rx="9" fill="#FFF7EB"/>
+                      <circle cx="26.4733" cy="26" r="18" fill="#FFE0B2"/>
+                      <path d="M26.4734 32.8571C30.2604 32.8571 33.3305 29.7871 33.3305 26C33.3305 22.2129 30.2604 19.1429 26.4734 19.1429C22.6863 19.1429 19.6162 22.2129 19.6162 26C19.6162 29.7871 22.6863 32.8571 26.4734 32.8571Z" stroke="#424242" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M26.4733 15.7143V13.1429" stroke="#424242" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M18.7591 18.2857L17.0448 16.5714" stroke="#424242" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M16.1876 26H13.6162" stroke="#424242" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M18.7591 33.7143L17.0448 35.4285" stroke="#424242" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M26.4733 36.2857V38.8571" stroke="#424242" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M34.1876 33.7143L35.9019 35.4285" stroke="#424242" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M36.759 26H39.3305" stroke="#424242" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M34.1876 18.2857L35.9019 16.5714" stroke="#424242" stroke-linecap="round" stroke-linejoin="round"/>
+                      <rect x="1" y="1" width="102" height="50" rx="9" stroke="#FFE0B2" stroke-width="2"/>
+                      </svg>
+                      }
                     </button>
                     <button type={"button"}>
                       <span>RU</span>
