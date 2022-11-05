@@ -623,6 +623,8 @@ const Calendar = () => {
           </button>
         </section>
         <section className={classes.people}>
+        <link rel="preload" as="image" href={business}></link>
+          <link rel="preload" as="image" href={group}></link>
           <h2>Кому подойдет?</h2>
           <div className={classes.people__description}>
             {peopleState[0] && (
