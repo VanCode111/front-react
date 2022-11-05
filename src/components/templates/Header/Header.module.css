@@ -24,6 +24,8 @@
     text-decoration: none;
     display: flex;
     align-items: center;
+    font-size: 1.75rem;
+    color: var(--primaryFontColor);
 }
 
 .buttons {

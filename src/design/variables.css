@@ -3,6 +3,21 @@
     --secondaryColor: white;
     --dashboardNumbersColor: #424242;
 
+    /* Calendar */
+    --primaryFontColor: #0A0A0A;
+    --pressedFontColor: #C28327;
+    --dimFontColor: #E0E0E0;
+    --currentBgColor: #FFF7EB;
+    --currentFontColor: #757575;
+    --mainFontColor: #000000;
+    --targetBorderColor: #C28327;
+    --livedBgColor: #FFE0B2;
+    --buttonBgColor: #FFFFFF;
+    --pageBgColor: #FFFFFF;
+
+    /* ThemeButton */
+    --themeBtnBgColor: #FFF7EB;
+
     --violetCardColor: linear-gradient(106.68deg, #AC5EEA 14.35%, #7820BE 83.41%);
     --yellowCardColor: linear-gradient(106.68deg, #F5D83D 14.35%, #E89822 83.41%);
     --greenCardColor: linear-gradient(104.82deg, #C0EC61 14.75%, #E0E32E 84.54%);
@@ -17,6 +32,21 @@
     --textColor: white;
     --secondaryColor: #616161;
     --dashboardNumbersColor: white;
+
+    /* Calendar */
+    --primaryFontColor: #FFF;
+    --pressedFontColor: #A6BCD2;
+    --dimFontColor: #363636;
+    --currentBgColor: #E0F0FF;
+    --currentFontColor: #757575;
+    --mainFontColor: #0A0A0A;
+    --targetBorderColor: #27496C;
+    --livedBgColor: #A6BCD2; 
+    --buttonBgColor: #27496C;
+    --pageBgColor: #0A0A0A;
+
+    /* themeButton */
+    --themeBtnBgColor: #27496C;
 
     --mainCardColor: #757575;
     --violetCardColor: var(--mainCardColor);
