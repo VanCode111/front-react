@@ -1,13 +1,10 @@
 .wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
+  background-color: white;
 }
 
-.header {
-    height: 50px;
-}
-
-.footer {
-    height: 50px;
+.main {
+  padding: 40px 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 118px;
 }

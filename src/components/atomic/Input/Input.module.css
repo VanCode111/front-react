@@ -11,7 +11,7 @@
   color: inherit;
 }
 
-.input[type='checkbox'] {
+.input[type="checkbox"] {
   width: 30px;
   height: 30px;
 }
@@ -22,9 +22,20 @@
 }
 
 .variant_secondary {
-  border: 2px solid rgba(255, 224, 178, 1);
+  border-width: 2px;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 13px 15px;
 }
 
 .variant_secondary:focus {
-  border: 2px solid rgba(255, 224, 178, 1);
+  border-width: 2px;
+}
+
+.color_orange {
+  border-color: #ffe0b2;
+}
+
+.color_orange:focus {
+  border-color: #ffe0b2;
 }
