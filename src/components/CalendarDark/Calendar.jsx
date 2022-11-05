@@ -106,7 +106,7 @@ const Calendar = () => {
                   <button onClick={menuHandler}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      fill="white"
+                      fill={svgColor}
                       height="48"
                       width="48"
                     >
