@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import { Header, Sidebar } from '../../components';
+import { Header, Sidebar, Footer } from '../../components';
 
 import classes from './AdminPage.module.css';
 
@@ -23,7 +23,7 @@ export const AdminPage = ({
             {children}
         </main>
         <footer className={classes.footer}>
-            Календарь жизни, 2022
+            <Footer />
         </footer>
     </div>
 );

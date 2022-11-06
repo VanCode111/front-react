@@ -23,11 +23,17 @@ export const withLabel =
         className={cn(
           classes.inputContainer,
           containerClass,
-          classes[`variant_${variant}`],
           classes[labelPosition]
         )}
       >
-        <label htmlFor={id} className={cn(classes.inputLabel, labelClass)}>
+        <label
+          htmlFor={id}
+          className={cn(
+            classes.inputLabel,
+            labelClass,
+            classes[`variant_${variant}`]
+          )}
+        >
           {label}
         </label>
         <Component register={register} id={id} {...props} variant={variant} />

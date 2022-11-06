@@ -1,7 +1,7 @@
 .listItem {
-  background: #f4f4f4;
+  background: var(--primaryShade3OrContrastShade3);
   border-radius: 7px;
-  padding: 8px;
+  padding: 8px 15px;
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -17,4 +17,18 @@
   padding: 14px;
   width: 100%;
   flex-grow: 1;
+  font-weight: 400;
+  font-size: 18px;
+  color: #424242;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.wrapper + .wrapper {
+  border-left: 1px solid;
+  padding-left: 20px;
+
+  border-left-color: #d9d9d9;
 }

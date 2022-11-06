@@ -18,9 +18,10 @@ export const About = () => {
                 <Form onSubmit={onSubmit} className={classes.form}>
                     <Form.Option
                         variant="secondary"
+                        labelClass={classes.label}
                         label={(
                             <span className={classes.label}>
-                                <PersonIcon />
+                                <PersonIcon className={'themeSvg'} />
                                 {' '}
                                 Чем вы занимаетесь?
                             </span>
@@ -44,7 +45,7 @@ export const About = () => {
                         variant="secondary"
                         label={(
                             <span className={classes.label}>
-                                <PersonIcon />
+                                <PersonIcon  className={'themeSvg'} />
                                 {' '}
                                 Кем вы являетесь?
                             </span>

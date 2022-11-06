@@ -27,7 +27,6 @@
 .footer {
     background: var(--secondaryOrContrastShade1);
     color: var(--contrastOrPrimary);
-    height: 50px;
     grid-column: 1 / 3;
     display: flex;
     align-items: center;
@@ -46,4 +45,29 @@
     font-weight: 700;
     padding-bottom: 40px;
     line-height: 33px;
+}
+
+/* gleb-and-gleb adaptiv */
+
+
+@media (max-width: 1100px) {
+    .header {
+        display: none;
+    }
+}
+@media (max-width: 760px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        display: none;
+    }
+    .main {
+        padding: 40px 34px;
+    }
+}
+@media (max-width: 400px) {
+    .main {
+        padding: 40px 24px;
+    }
 }

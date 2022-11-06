@@ -1,13 +1,28 @@
 .wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
+  background: var(--primaryColor);
+}
+
+.main {
+  padding: 40px 0;
+  padding-bottom: 118px;
 }
 
 .header {
-    height: 50px;
+  background: var(--secondaryOrContrastShade2);
+  color: var(--contrastOrPrimary);
+}
+
+.sidebar {
+  background: var(--secondaryOrContrastShade2);
+  color: var(--contrastOrPrimary);
 }
 
 .footer {
-    height: 50px;
+  background: var(--secondaryOrContrastShade2);
+  color: var(--contrastOrPrimary);
+}
+
+.main {
+  background: var(--secondaryOrContrastShade2);
+  color: var(--contrastOrPrimary);
 }

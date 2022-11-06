@@ -4,10 +4,18 @@ import classNames from "classnames";
 import { useForm } from "react-hook-form";
 
 import { withLabel } from "./withLabel";
-import { Input as AtomicInput, Textarea as AtmoicTextarea } from "../atomic";
+import {
+  Input as AtomicInput,
+  Textarea as AtmoicTextarea,
+  DatePicker as AtmoicDatePicker,
+} from "../atomic";
 import { FormContext } from "./context";
 
 import classes from "./Form.module.css";
+
+const DatePicker = ({ name, id, register, ...props }) => (
+  <AtmoicDatePicker id={id} {...register(name)} {...props} />
+);
 
 const Input = ({ name, type = "text", id, register, ...props }) => (
   <AtomicInput type={type} id={id} {...register(name)} {...props} />
@@ -82,3 +90,4 @@ Form.propTypes = {
 Form.Input = withLabel(Input);
 Form.Option = withLabel(Option);
 Form.Textarea = withLabel(Textarea);
+Form.DatePicker = withLabel(DatePicker);

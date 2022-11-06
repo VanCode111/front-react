@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "./UserListItem.module.css";
+import cn from "classnames";
 
-const UserListItem = ({ items }) => {
+const UserListItem = ({ items, className = "" }) => {
   return (
-    <div className={styles.listItem}>
+    <div className={cn(styles.listItem, className)}>
       {items.map(({ value, width }) => (
-        <div className={styles.itemValue} style={{ flexBasis: `${width}px` }}>
-          {value}
+        <div className={styles.wrapper} style={{ flexBasis: `${width}px` }}>
+          <div className={styles.itemValue}>{value}</div>
         </div>
       ))}
     </div>

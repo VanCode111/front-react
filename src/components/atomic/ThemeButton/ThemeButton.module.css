@@ -1,5 +1,5 @@
 .button {
-    border: 2px solid #FFE0B2;
+    border: 2px solid var(--livedBgColor);
     border-radius: 8px;
     padding: 5px;
     width: 100px;
@@ -7,14 +7,16 @@
     align-items: start;
 }
 
-.button:hover {
-    background: #FFF7EB;
-}
-
 .buttonLight {
     justify-content: flex-start;
+    background: var(--themeBtnBgColor);
 }
 
 .buttonDark {
     justify-content: flex-end;
+    background: var(--themeBtnBgColor);
+}
+
+.button:hover {
+    background: var(--themeBtnBgColor);
 }
