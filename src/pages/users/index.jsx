@@ -10,7 +10,7 @@ export const Users = () => {
     <AdminPage>
       <div className={styles.header}>
         <h2 className={styles.title}>Пользователи</h2>
-        <Button>Сбросить фильтр</Button>
+        <Button color="secondaryShade2OrPrimaryShade1">Сбросить фильтр</Button>
       </div>
       <div>
         <UsersFilters />

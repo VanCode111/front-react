@@ -36,6 +36,18 @@
   border-color: #ffe0b2;
 }
 
+.color_dark {
+  border-color: #424242c2;
+}
+
+.color_dark::placeholder {
+  color: var(--contrastShade1OrPrimary1);
+}
+
+.color_dark:focus {
+  border-color: #424242;
+}
+
 .color_orange:focus {
   border-color: #ffe0b2;
 }

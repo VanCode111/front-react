@@ -6,7 +6,7 @@ import classNames from "classnames";
 
 const UsersFilters = () => {
   return (
-    <Card color="white">
+    <Card>
       <Form className={styles.form}>
         <Form.Input
           name="id"
@@ -16,11 +16,13 @@ const UsersFilters = () => {
           containerClass={classNames(styles.formItem, styles.userId)}
           className={styles.formInput}
           labelPosition="top"
+          color="dark"
         />
 
         <Form.Input
           containerClass={classNames(styles.formItem, styles.lastName)}
           name="id"
+          color="dark"
           label="Фамилия:"
           variant="secondary"
           placeholder="Фамилия:"
@@ -33,6 +35,7 @@ const UsersFilters = () => {
           label="Имя:"
           variant="secondary"
           placeholder="Имя:"
+          color="dark"
           containerClass={classNames(styles.formItem, styles.name)}
           className={styles.formInput}
           labelPosition="top"
@@ -42,22 +45,25 @@ const UsersFilters = () => {
           label="Почта:"
           variant="secondary"
           placeholder="Почта:"
+          color="dark"
           containerClass={classNames(styles.formItem, styles.email)}
-          className={styles.formInput}
-          labelPosition="top"
-        />
-        <Form.Input
-          name="id"
-          label="id"
-          variant="secondary"
-          containerClass={classNames(styles.formItem, styles.date)}
           className={styles.formInput}
           labelPosition="top"
         />
         <Form.DatePicker
           name="id"
-          label="id"
+          label="Дата др:"
           variant="secondary"
+          color="dark"
+          containerClass={classNames(styles.formItem, styles.dateRegist)}
+          className={styles.formInput}
+          labelPosition="top"
+        />
+        <Form.DatePicker
+          name="id"
+          label="Дата регистрации:"
+          variant="secondary"
+          color="dark"
           containerClass={classNames(styles.formItem, styles.dateRegist)}
           className={styles.formInput}
           labelPosition="top"
