@@ -1,24 +1,28 @@
 .link {
-    border-radius: 15px;
-    padding: 8px 12px 4px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    color: inherit;
+  border-radius: 15px;
+  padding: 8px 12px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
 }
 
 .link:hover {
-    background: #FFE0B2;
+  background: #ffe0b2;
 }
 
 .label {
-    font-weight: 700;
-    font-size: 1rem;
-    line-height: 1.375rem;
-    color: inherit;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.375rem;
+  color: inherit;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+.active {
+  background: #ffe0b2;
 }

@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import { Header } from "../../components/templates/Header/Header";
 import { Footer } from "../../components/templates/Footer/Footer";
+
 import classes from "./Page.module.css";
 
 export const Page = ({ children }) => (

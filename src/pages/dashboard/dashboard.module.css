@@ -22,6 +22,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    /* gleb-and-gleb adaptiv */
+    flex-wrap: wrap;
+    gap: 44px;
 }
 
 .mainCardViolet {
@@ -155,4 +158,77 @@
     line-height: 1.5rem;
     color: var(--dashboardNumbersColor);
     opacity: 0.5;
+}
+
+/* gleb-and-gleb adaptiv*/
+
+@media (max-width: 1480px) {
+    .secondaryItems {
+        grid-template: 
+            "circleCard genderCard" auto
+            "circleCard ageCard" auto
+            "targetCard targetCard" auto /
+            4fr 5fr;
+    } 
+    .mainStatistics {
+        justify-content: center;
+    }
+    .mainStatistics > div > img {
+        width: 100%;
+    }
+}
+@media (max-width: 1280px) {
+    .secondaryItems {
+        grid-template: 
+            "circleCard" auto
+            "genderCard" auto
+            "ageCard" auto
+            "targetCard" auto /
+            1fr;
+    } 
+    .circleCard canvas {
+        margin: 0 auto;
+        width: 70% !important;
+        height: auto !important;
+    }  
+}
+@media (max-width: 760px) {
+    .heading {
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 25px;
+    }
+    .mainStatistics {
+        row-gap: 10px;
+    }
+    .mainStatistics > div {
+        width: 300px;
+        height: auto;
+        padding: 20px 10px 10px 10px;
+    }
+    .dashboard .title {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .mainName {
+        width: auto;
+        margin: 0;
+        text-align: center;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .bars {
+        width: 100% !important; 
+    }
+    .mainZigzag {
+        display: none;
+    }  
+    .mainCount {
+        position: static;
+    }
+    .mainNumber {
+        font-size: 30px;
+    }
 }

@@ -7,7 +7,7 @@ import { ReactComponent as Accepted } from '../../static/images/accepted.svg';
 
 import classes from './AccountForm.module.css';
 
-export const AccountForm = ({ mode, className }) => {
+export const AccountForm = ({ mode, className, isAdmin }) => {
     const onSubmit = (data) => {
         alert(JSON.stringify(data));
     };
@@ -47,10 +47,13 @@ export const AccountForm = ({ mode, className }) => {
                     <div className={classes.list}>
                         <Form.Textarea label="Обо мне" name="about" containerClass={classes.textarea} placeholder="Расскажите о себе" />
                     </div>
-                    <div className={classes.status}>
+                    {
+                        isAdmin &&  <div className={classes.status}>
                         <span>Admin</span>
                         <Accepted />
                     </div>
+                    }
+                   
                 </div>
                 {
                     mode === 'my'

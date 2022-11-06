@@ -1,10 +1,28 @@
 .wrapper {
-  background-color: white;
+  background: var(--primaryColor);
 }
 
 .main {
   padding: 40px 0;
-  max-width: 1400px;
-  margin: 0 auto;
   padding-bottom: 118px;
+}
+
+.header {
+  background: var(--secondaryOrContrastShade2);
+  color: var(--contrastOrPrimary);
+}
+
+.sidebar {
+  background: var(--secondaryOrContrastShade2);
+  color: var(--contrastOrPrimary);
+}
+
+.footer {
+  background: var(--secondaryOrContrastShade2);
+  color: var(--contrastOrPrimary);
+}
+
+.main {
+  background: var(--secondaryOrContrastShade2);
+  color: var(--contrastOrPrimary);
 }

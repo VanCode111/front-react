@@ -5,39 +5,98 @@ import UserListItem from "../UserListItem/UserListItem";
 
 const items = [
   {
-    name: "Иван",
-    lastName: "Иван",
-    asg: "Иван",
-    asga: "Иван",
-    naame: "Иван",
-    naames: "aaaa",
-    naamea: "asgag",
+    id: "ID: 1",
+    lastName: "Смирнов",
+    name: "Антип",
+    email: "antipSmirnovv@gmail.com",
+    birthday: "12/07/2000",
+    dateOfRegistration: "11/12/2020",
   },
-  { name: "Иван", lastName: "Иван", asg: "Иван", asga: "Иван", naame: "Иван" },
-  { name: "Иван", lastName: "Иван", asg: "Иван", asga: "Иван", naame: "Иван" },
-  { name: "Иван", lastName: "Иван", asg: "Иван", asga: "Иван", naame: "Иван" },
-  { name: "Иван", lastName: "Иван", asg: "Иван", asga: "Иван", naame: "Иван" },
-  { name: "Иван", lastName: "Иван", asg: "Иван", asga: "Иван", naame: "Иван" },
-  { name: "Иван", lastName: "Иван", asg: "Иван", asga: "Иван", naame: "Иван" },
-  { name: "Иван", lastName: "Иван", asg: "Иван", asga: "Иван", naame: "Иван" },
+  {
+    id: "ID: 1",
+    lastName: "Смирнов",
+    name: "Антип",
+    email: "antipSmirnovv@gmail.com",
+    birthday: "12/07/2000",
+    dateOfRegistration: "11/12/2020",
+  },
+  {
+    id: "ID: 1",
+    lastName: "Смирнов",
+    name: "Антип",
+    email: "antipSmirnovv@gmail.com",
+    birthday: "12/07/2000",
+    dateOfRegistration: "11/12/2020",
+  },
+  {
+    id: "ID: 1",
+    lastName: "Смирнов",
+    name: "Антип",
+    email: "antipSmirnovv@gmail.com",
+    birthday: "12/07/2000",
+    dateOfRegistration: "11/12/2020",
+  },
+  {
+    id: "ID: 1",
+    lastName: "Смирнов",
+    name: "Антип",
+    email: "antipSmirnovv@gmail.com",
+    birthday: "12/07/2000",
+    dateOfRegistration: "11/12/2020",
+  },
+  {
+    id: "ID: 1",
+    lastName: "Смирнов",
+    name: "Антип",
+    email: "antipSmirnovv@gmail.com",
+    birthday: "12/07/2000",
+    dateOfRegistration: "11/12/2020",
+  },
+  {
+    id: "ID: 1",
+    lastName: "Смирнов",
+    name: "Антип",
+    email: "antipSmirnovv@gmail.com",
+    birthday: "12/07/2000",
+    dateOfRegistration: "11/12/2020",
+  },
+  {
+    id: "ID: 1",
+    lastName: "Смирнов",
+    name: "Антип",
+    email: "antipSmirnovv@gmail.com",
+    birthday: "12/07/2000",
+    dateOfRegistration: "11/12/2020",
+  },
+  {
+    id: "ID: 1",
+    lastName: "Смирнов",
+    name: "Антип",
+    email: "antipSmirnovv@gmail.com",
+    birthday: "12/07/2000",
+    dateOfRegistration: "11/12/2020",
+  },
 ];
 
 const UsersList = () => {
   return (
-    <Card color="white">
+    <Card>
       <div className={styles.usersList}>
-        {items.map(({ name, lastName, asg, asga, naame, naames, naamea }) => (
-          <UserListItem
-            items={[
-              { value: name, width: 97 },
-              { value: lastName, width: 287 },
-              { value: asg, width: 235 },
-              { value: asga, width: 255 },
-              { value: naames, width: 180 },
-              { value: naamea, width: 180 },
-            ]}
-          />
-        ))}
+        {items.map(
+          ({ id, lastName, name, email, birthday, dateOfRegistration }) => (
+            <UserListItem
+              className={styles.listItem}
+              items={[
+                { value: id, width: 97 },
+                { value: lastName, width: 287 },
+                { value: name, width: 235 },
+                { value: email, width: 255 },
+                { value: birthday, width: 180 },
+                { value: dateOfRegistration, width: 180 },
+              ]}
+            />
+          )
+        )}
       </div>
     </Card>
   );

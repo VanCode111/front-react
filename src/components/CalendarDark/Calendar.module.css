@@ -14,13 +14,14 @@
 }
 .promo {
   background-repeat: no-repeat;
-  background-image: url("./theme.png");
-  /* background-image: url("./theme-dark.png"); */
+  background-image: url("./theme-dark.png");
   background-size: cover;
   background-position-y: -90px;
   background-position-x: 40px;
 }
-
+.promo--dark {
+  background-image: url("./theme.png");
+}
 .header {
   padding-top: 2.5rem;
 }
@@ -234,7 +235,7 @@
 .interface__switch-btn {
   cursor: pointer;
   border: none;
-  background: none;
+  background: none !important;
   font-size: 36px;
   color: var(--var-body-fc);
 
@@ -912,9 +913,9 @@
   --var-body-hc: #C28327;
 } */
 
-:root {
+/* :root {
   --var-body-bg: black;
   --var-body-fc: white;
   --var-body-sc: #27496C;
   --var-body-hc: white;
-}
+}  */
