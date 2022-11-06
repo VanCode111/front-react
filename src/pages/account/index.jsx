@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { AdminPage } from '../../containers/AdminPage/AdminPage';
 import { Card } from '../../containers';
@@ -9,16 +10,18 @@ import { ChartCard } from '../../components/ChartCard/ChartCard';
 import classes from './account.module.css';
 
 export const Account = () => {
-  return (
-    <AdminPage title="Личный кабинет">
-      <AccountForm />
-      <Card className={classes.graphicContainer}>
+    const { t } = useTranslation();
+
+    return (
+    <AdminPage title={t('adminAcc.heading')}>
+        <AccountForm />
+        <Card className={classes.graphicContainer}>
         <div className={classes.graphic}>
-          <h2 className={classes.title}>Ваша активность</h2>
-          <AccountChart activity={statistics.activity} />
+            <h2 className={classes.title}>{t('adminAcc.activity')}</h2>
+            <AccountChart activity={statistics.activity} />
         </div>
         <ChartCard />
-      </Card>
+        </Card>
     </AdminPage>
-  );
+    );
 };
