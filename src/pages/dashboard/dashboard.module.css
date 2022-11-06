@@ -162,10 +162,6 @@
 
 /* gleb-and-gleb adaptiv*/
 
-.secondaryItems > div {
-    background: white;
-}
-
 @media (max-width: 1480px) {
     .secondaryItems {
         grid-template: 
