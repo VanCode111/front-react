@@ -8,8 +8,8 @@ import styles from "./Sidebar.module.css";
 
 export const Sidebar = ({ className, ...props }) => (
   <div className={styles.sidebar} {...props}>
-    <MenuButton link="/" type="lk" />
-    <MenuButton link="/" type="statistics" />
+    <MenuButton link="/account" type="lk" />
+    <MenuButton link="/dashboard" type="statistics" />
     <MenuButton link="/users" type="users" />
   </div>
 );

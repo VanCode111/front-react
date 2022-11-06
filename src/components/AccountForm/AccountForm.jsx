@@ -8,7 +8,7 @@ import { ReactComponent as Accepted } from '../../static/images/accepted.svg';
 
 import classes from './AccountForm.module.css';
 
-export const AccountForm = ({ mode, className }) => {
+export const AccountForm = ({ mode, className, isAdmin }) => {
     const { t } = useTranslation();
 
     const onSubmit = (data) => {

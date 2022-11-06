@@ -1,97 +1,120 @@
 :root {
-    --primaryColor: #fff4e4;
-    --secondaryColor: white;
-    --dashboardNumbersColor: #424242;
+  --primaryColor: #fff4e4;
+  --secondaryColor: white;
+  --dashboardNumbersColor: #424242;
 
-    /* Calendar */
-    --primaryFontColor: #0A0A0A;
-    --pressedFontColor: #C28327;
-    --dimFontColor: #E0E0E0;
-    --currentBgColor: #FFF7EB;
-    --currentFontColor: #757575;
-    --mainFontColor: #000000;
-    --targetBorderColor: #C28327;
-    --livedBgColor: #FFE0B2;
-    --buttonBgColor: #FFFFFF;
-    --pageBgColor: #FFFFFF;
+  /* Calendar */
+  --primaryFontColor: #0a0a0a;
+  --pressedFontColor: #c28327;
+  --dimFontColor: #e0e0e0;
+  --currentBgColor: #fff7eb;
+  --currentFontColor: #757575;
+  --mainFontColor: #000000;
+  --targetBorderColor: #c28327;
+  --livedBgColor: #ffe0b2;
+  --buttonBgColor: #ffffff;
+  --pageBgColor: #ffffff;
 
-    /* ThemeButton */
-    --themeBtnBgColor: #FFF7EB;
+  /* ThemeButton */
+  --themeBtnBgColor: #fff7eb;
 
-    --violetCardColor: linear-gradient(106.68deg, #AC5EEA 14.35%, #7820BE 83.41%);
-    --yellowCardColor: linear-gradient(106.68deg, #F5D83D 14.35%, #E89822 83.41%);
-    --greenCardColor: linear-gradient(104.82deg, #C0EC61 14.75%, #E0E32E 84.54%);
+  --violetCardColor: linear-gradient(106.68deg, #ac5eea 14.35%, #7820be 83.41%);
+  --yellowCardColor: linear-gradient(106.68deg, #f5d83d 14.35%, #e89822 83.41%);
+  --greenCardColor: linear-gradient(104.82deg, #c0ec61 14.75%, #e0e32e 84.54%);
 
-    --violetCardShadow: rgba(96, 18, 156, 0.31);
-    --yellowCardShadow: rgba(190, 119, 11, 0.31);
-    --greenCardShadow: rgba(46, 156, 18, 0.31);
-    /* bind colors */
-    --primaryColor1: #FFF;
-    --primaryColorShade1: #CDCDCD;
-    --primaryColorShade2: #616161;
+  --violetCardShadow: rgba(96, 18, 156, 0.31);
+  --yellowCardShadow: rgba(190, 119, 11, 0.31);
+  --greenCardShadow: rgba(46, 156, 18, 0.31);
+  /* bind colors */
+  --primaryColor1: #fff;
+  --primaryColorShade1: #cdcdcd;
+  --primaryColorShade2: #616161;
+  --primaryColorShade3: #f4f4f4;
 
-    --secondaryColor: #FFF8EE;
-    --secondaryColorShade1: #FFF4E2;
-    --secondaryColorShade2: #FFE0B2;
+  --secondaryColor: #fff8ee;
+  --secondaryColorShade1: #fff4e2;
+  --secondaryColorShade2: #ffe0b2;
 
-    --contrastColor: #1F1F1F;
-    --contrastColorShade1: #424242;
+  --contrastColor: #1f1f1f;
+  --contrastColorShade1: #424242;
+  --contrastColorShade2: #0a0a0a;
+  --contrastColorShade3: #c2c2c2;
 }
 
-#root[data-theme='dark'] {
-    --primaryColor: #1f1f1f;
-    --textColor: white;
-    --secondaryColor: #616161;
-    --dashboardNumbersColor: white;
+#root[data-theme="dark"] {
+  --primaryColor: #1f1f1f;
+  --textColor: white;
+  --secondaryColor: #616161;
+  --dashboardNumbersColor: white;
 
-    /* Calendar */
-    --primaryFontColor: #FFF;
-    --pressedFontColor: #A6BCD2;
-    --dimFontColor: #363636;
-    --currentBgColor: #E0F0FF;
-    --currentFontColor: #757575;
-    --mainFontColor: #0A0A0A;
-    --targetBorderColor: #27496C;
-    --livedBgColor: #A6BCD2; 
-    --buttonBgColor: #27496C;
-    --pageBgColor: #0A0A0A;
+  /* Calendar */
+  --primaryFontColor: #fff;
+  --pressedFontColor: #a6bcd2;
+  --dimFontColor: #363636;
+  --currentBgColor: #e0f0ff;
+  --currentFontColor: #757575;
+  --mainFontColor: #0a0a0a;
+  --targetBorderColor: #27496c;
+  --livedBgColor: #a6bcd2;
+  --buttonBgColor: #27496c;
+  --pageBgColor: #0a0a0a;
 
-    /* themeButton */
-    --themeBtnBgColor: #27496C;
+  /* themeButton */
+  --themeBtnBgColor: #27496c;
 
-    --mainCardColor: #757575;
-    --violetCardColor: var(--mainCardColor);
-    --yellowCardColor: var(--mainCardColor);
-    --greenCardColor: var(--mainCardColor);
+  --mainCardColor: #757575;
+  --violetCardColor: var(--mainCardColor);
+  --yellowCardColor: var(--mainCardColor);
+  --greenCardColor: var(--mainCardColor);
 
-    --mainCardShadow: rgba(0, 0, 0, 0.31);
-    --violetCardShadow: var(--mainCardShadow);
-    --yellowCardShadow: var(--mainCardShadow);
-    --greenCardShadow: var(--mainCardShadow);
+  --mainCardShadow: rgba(0, 0, 0, 0.31);
+  --violetCardShadow: var(--mainCardShadow);
+  --yellowCardShadow: var(--mainCardShadow);
+  --greenCardShadow: var(--mainCardShadow);
 }
 
-#root[data-theme='light'] {
-    --primaryOrPrimaryShade2: var(--primaryColor1);
-    --secondaryShade1OrPrimaryShade2: var(--secondaryColorShade1);
-    --contrastOrPrimary: var(--contrastColor);
-    --primaryOrContrast: var(--primaryColor1);
-    --secondaryOrContrastShade1: var(--secondaryColor);
-    --secondaryShade1OrConstrast: var(--secondaryColorShade1);
+#root[data-theme="light"] {
+  --primaryOrPrimaryShade2: var(--primaryColor1);
+  --secondaryShade1OrPrimaryShade2: var(--secondaryColorShade1);
+  --contrastOrPrimary: var(--contrastColor);
+  --primaryOrContrast: var(--primaryColor1);
+  --primaryShade3OrContrastShade3: var(--primaryColorShade3);
+  --secondaryOrContrastShade2: var(--secondaryColor);
+  --secondaryOrContrastShade1: var(--secondaryColor);
+  --secondaryShade1OrConstrast: var(--secondaryColorShade1);
+  --secondaryShade2OrPrimaryShade1: var(--secondaryColorShade2);
+  --contrastShade1OrPrimary1: var(--contrastColorShade1);
 
-    --inputBorderColor: rgba(0, 0, 0, 0.1);
+  --inputBorderColor: rgba(0, 0, 0, 0.1);
+
+  /* gleb-and-gleb */
+  --var-body-bg: white;
+  --var-body-fc: black;
+  --var-body-sc: #ffe0b2;
+  --var-body-hc: #c28327;
 }
 
-#root[data-theme='dark'] {
-    --primaryOrPrimaryShade2: var(--primaryColorShade2);
-    --secondaryShade1OrPrimaryShade2: var(--primaryColorShade2);
-    --contrastOrPrimary: var(--primaryColor1);
-    --primaryOrContrast: var(--contrastColor);
-    --secondaryOrContrastShade1: var(--contrastColorShade1);
-    --secondaryShade1OrConstrast: var(--contrastColor);
+#root[data-theme="dark"] {
+  --primaryOrPrimaryShade2: var(--primaryColorShade2);
+  --primaryShade3OrContrastShade3: var(--contrastColorShade3);
+  --secondaryShade1OrPrimaryShade2: var(--primaryColorShade2);
+  --contrastOrPrimary: var(--primaryColor1);
+  --secondaryOrContrastShade2: var(--contrastColorShade2);
+  --secondaryOrContrast: var(--contrastColor);
+  --secondaryOrContrastShade1: var(--contrastColorShade1);
+  --secondaryShade1OrConstrast: var(--contrastColor);
+  --secondaryShade2OrPrimaryShade1: var(--primaryColorShade1);
+  --contrastShade1OrPrimary1: var(--primaryColor1);
 
-    --inputBorderColor: rgba(255, 255, 255, 0.1);
+  --inputBorderColor: rgba(255, 255, 255, 0.1);
+
+  /* gleb-and-gleb */
+  --var-body-bg: black;
+  --var-body-fc: white;
+  --var-body-sc: #27496c;
+  --var-body-hc: white;
 }
 
 #root {
-    background: var(--primaryColor1);
+  background: var(--primaryColor1);
 }

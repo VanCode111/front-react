@@ -14,3 +14,7 @@
 .button:hover {
   background: #ffe0b2;
 }
+
+.button.secondaryShade2OrPrimaryShade1 {
+  background: var(--secondaryShade2OrPrimaryShade1);
+}

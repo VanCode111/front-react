@@ -1,14 +1,14 @@
 import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import AvatarIcon from './assets/avatar.svg';
-import StatisticItcon from './assets/statistic.svg';
-import UsersIcon from './assets/users.svg';
+import AvatarIcon from "./assets/avatar.svg";
+import StatisticItcon from "./assets/statistic.svg";
+import UsersIcon from "./assets/users.svg";
 
-import styles from './MenuButton.module.css';
+import styles from "./MenuButton.module.css";
 
 export const MenuButton = ({
     link, type, className, ...props
@@ -26,18 +26,26 @@ export const MenuButton = ({
         users: t('sidebar.users'),
     };
 
-    return (
-        <Link to={link} className={cn(styles.link, className)} {...props}>
-            <img src={img[type]} alt={labels[type]} />
-            <span className={styles.label}>{labels[type]}</span>
-        </Link>
-    );
+  return (
+    <NavLink
+      exact
+      to={link}
+      className={({ isActive }) =>
+        cn(styles.link, className, { [styles.active]: isActive })
+      }
+      {...props}
+      end
+    >
+      <img src={img[type]} alt={labels[type]} />
+      <span className={styles.label}>{labels[type]}</span>
+    </NavLink>
+  );
 };
 
 // type = 'lk' | 'statistics' | 'users'
 
 MenuButton.propTypes = {
-    link: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    className: PropTypes.string,
+  link: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
