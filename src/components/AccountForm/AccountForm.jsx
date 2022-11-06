@@ -64,11 +64,13 @@ export const AccountForm = ({ mode, className, isAdmin }) => {
                         <Form.Textarea label={t('adminAcc.form.about')} name="about" containerClass={classes.textarea} value={about} onChange={(e) => setAbout(e.target.value)} placeholder="Расскажите о себе" />
                     </div>
                     {
-                        isAdmin &&  <div className={classes.status}>
-                        <span>Admin</span>
-                        <Accepted />
+                        isAdmin &&  (
+                            <div className={classes.status}>
+                                <span>Admin</span>
+                                <Accepted />
+                            </div>
+                        )
                     }
-                    </div>
                     {mode !== 'my' && (
                         <div className={classes.status}>
                             <span>Admin</span>
