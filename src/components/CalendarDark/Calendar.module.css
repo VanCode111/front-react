@@ -15,9 +15,14 @@
 .promo {
   background-repeat: no-repeat;
   background-image: url("./theme-dark.png");
-  background-size: cover;
-  background-position-y: -90px;
-  background-position-x: 40px;
+  background-size: 100%;
+  background-position-y: center;
+}
+
+@media (max-width: 1250px) {
+  .promo{
+    background-image: none;
+  }
 }
 .promo--dark {
   background-image: url("./theme.png");
@@ -919,3 +924,20 @@
   --var-body-sc: #27496C;
   --var-body-hc: white;
 }  */
+
+@media (max-width: 1400px) {
+  .content__links svg{
+    width: 48px;
+  }
+  .content__title {
+    font-size: 40px !important;
+    line-height: 1.4 !important;
+  }
+  .content__description {
+    font-size: 20px !important;
+    line-height: 1.4 !important;
+  }
+  .content__links a + a {
+    margin-left: 25px !important;
+  }
+}
