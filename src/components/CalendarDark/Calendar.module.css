@@ -21,7 +21,7 @@
 
 @media (max-width: 1250px) {
   .promo{
-    background-image: none;
+    background-image: none !important;
   }
 }
 .promo--dark {
