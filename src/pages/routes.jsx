@@ -2,6 +2,8 @@ import React, { createContext, useMemo } from "react";
 import { useRoutes } from "react-router-dom";
 import { useTheme } from "../hooks/useTheme";
 
+import { Registration } from "./Registration"
+import { NewTask } from "./Newtask";
 import { Main } from "./main";
 import { DashBoard } from "./dashboard";
 import { Achievements } from "./achievements";
@@ -56,6 +58,14 @@ const routes = [
   {
     path: "/users",
     element: <Users />,
+  },
+  {
+    path: "/newtask",
+    element: <NewTask />,
+  },
+  {
+    path: "/registration",
+    element: <Registration />,
   },
 ];
 
