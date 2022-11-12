@@ -16,7 +16,7 @@ export const withLabel =
     labelPosition,
     ...props
   }) => {
-    const { register = null } = useContext(FormContext);
+    const { register = null, control } = useContext(FormContext);
     const id = useId();
     return (
       <div
@@ -36,7 +36,13 @@ export const withLabel =
         >
           {label}
         </label>
-        <Component register={register} id={id} {...props} variant={variant} />
+        <Component
+          register={register}
+          id={id}
+          {...props}
+          variant={variant}
+          control={control}
+        />
       </div>
     );
   };

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 
 import { withLabel } from "./withLabel";
 import {
@@ -12,6 +12,7 @@ import {
 import { FormContext } from "./context";
 
 import classes from "./Form.module.css";
+import { useImperativeHandle } from "react";
 
 const DatePicker = ({ name, id, register, ...props }) => (
   <AtmoicDatePicker id={id} {...register(name)} {...props} />
@@ -56,8 +57,14 @@ Option.propTypes = {
   id: PropTypes.string,
 };
 
-const Textarea = ({ name, register, id, ...props }) => (
-  <AtmoicTextarea name={name} id={id} {...register(name)} {...props} />
+const Textarea = ({ name, register, id, control, ...props }) => (
+  <Controller
+    control={control}
+    name={name}
+    render={({ field }) => (
+      <AtmoicTextarea name={name} id={id} {...field} {...props} />
+    )}
+  />
 );
 
 Textarea.propTypes = {
@@ -69,18 +76,33 @@ Textarea.propTypes = {
 // export const Checkbox = ({ }) => (
 // )
 
-export const Form = ({ onSubmit, children, ...props }) => {
-  const { handleSubmit, register } = useForm();
+export const Form = React.forwardRef(
+  ({ onSubmit, children, initialValue, onUpdateValue, ...props }, ref) => {
+    const { handleSubmit, register, reset, watch, control } = useForm();
 
-  return (
-    // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <FormContext.Provider value={{ register }}>
-      <form onSubmit={handleSubmit(onSubmit)} {...props}>
-        {children}
-      </form>
-    </FormContext.Provider>
-  );
-};
+    watch((data) => {
+      console.log("datga", data);
+      onUpdateValue(data);
+    });
+
+    useImperativeHandle(
+      ref,
+      () => ({
+        setValue: reset,
+      }),
+      [reset]
+    );
+
+    return (
+      // eslint-disable-next-line react/jsx-no-constructed-context-values
+      <FormContext.Provider value={{ register, control }}>
+        <form onSubmit={handleSubmit(onSubmit)} {...props}>
+          {children}
+        </form>
+      </FormContext.Provider>
+    );
+  }
+);
 
 Form.propTypes = {
   onSubmit: PropTypes.func,
