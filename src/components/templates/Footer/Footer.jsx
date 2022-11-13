@@ -13,7 +13,7 @@ export const Footer = () => (
                     <li>
                         <Link to="#">Скачать приложение</Link>
                     </li>
-                    <li className={styles.adaptive}>
+                    <li>
                         <Link to="#">О нас</Link>
                     </li>
                     <li>

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
 import { AppRouter } from './pages/routes';
+import './locales/i18n';
 
 import './design/index.css';
 

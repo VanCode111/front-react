@@ -1,16 +1,25 @@
 import React, { useState } from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 import { Lang, allLangs } from './constants';
 import TriangleIcon from './assets/triangle.svg';
 
 import styles from './LangButton.module.css';
+import { useEffect } from 'react';
+import { storage } from '../../../classes/Storage';
 
 export const LangButton = ({ className, ...props }) => {
-    const [lang, setLang] = useState(Lang.RU);
+    const [lang, setLang] = useState(storage.get('language')?.activeLang || Lang.RU);
+    const { i18n } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
     const [otherLangs, setOtherLangs] = useState(() => allLangs.filter((lng) => lng !== lang));
+
+    useEffect(() => {
+        storage.set('language', { activeLang: lang });
+        i18n.changeLanguage(lang.toLowerCase());
+    }, [i18n, lang]);
 
     const dropDown = () => {
         setIsOpen((prev) => !prev);

@@ -2,7 +2,7 @@
     border: 2px solid var(--livedBgColor);
     border-radius: 8px;
     width: 90px;
-    overflow: hidden;
+    position: relative;
 }
 
 button {
@@ -16,7 +16,7 @@ button:hover {
     background: var(--buttonBgColor);
 }
 
-.chooseButton {
+.chooseButton, .list {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -32,6 +32,11 @@ button:hover {
 
 .langItem {
     border-top: 2px solid var(--livedBgColor);
+    width: 100%;
+}
+
+.button {
+    width: 100%;
 }
 
 .triangleIcon {
@@ -48,4 +53,13 @@ button:hover {
 
 .triangleIcon_close {
     transform: rotate(180deg);
+}
+
+.list {
+    position: absolute;
+    border: 2px solid var(--livedBgColor);
+    border-radius: 8px;
+    width: 90px;
+    left: -2px;
+    z-index: 2;
 }
