@@ -17,6 +17,9 @@ import { MyAccount } from "./myacc";
 import Calendar from "../components/CalendarDark/Calendar";
 
 import { ThemeContext } from "./context";
+import { storage } from "../classes/Storage";
+import { Lang } from "../components/atomic/LangButton/constants";
+import { useEffect } from "react";
 
 const routes = [
   {
@@ -71,6 +74,13 @@ const routes = [
 
 export const AppRouter = () => {
   const { theme, setTheme } = useTheme();
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+      i18n.changeLanguage((storage.get('language')?.activeLang || Lang.RU).toLowerCase())
+  }, [i18n])
+
+
   const component = useRoutes(routes);
 
   const themeContext = useMemo(

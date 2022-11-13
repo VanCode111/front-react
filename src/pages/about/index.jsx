@@ -1,4 +1,6 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+
 import classes from './about.module.css';
 import { Form } from '../../components/Form/Form';
 import { Page } from '../../containers';
@@ -7,6 +9,8 @@ import Button from '../../components/atomic/Button/Button';
 import { ReactComponent as PersonIcon } from '../../static/images/person.svg';
 
 export const About = () => {
+    const { t } = useTranslation();
+
     const onSubmit = (data) => {
         console.log(data);
     };
@@ -14,7 +18,7 @@ export const About = () => {
     return (
         <Page>
             <div className={classes.login}>
-                <h5 className={classes.title}>О себе</h5>
+                <h5 className={classes.title}>{t('about.heading')}</h5>
                 <Form onSubmit={onSubmit} className={classes.form}>
                     <Form.Option
                         variant="secondary"
@@ -23,7 +27,7 @@ export const About = () => {
                             <span className={classes.label}>
                                 <PersonIcon className={'themeSvg'} />
                                 {' '}
-                                Чем вы занимаетесь?
+                                {t('about.whatAreYouDoing')}
                             </span>
                         )}
                         name="doing"
@@ -47,7 +51,7 @@ export const About = () => {
                             <span className={classes.label}>
                                 <PersonIcon  className={'themeSvg'} />
                                 {' '}
-                                Кем вы являетесь?
+                                {t('about.whoAreYou')}
                             </span>
                         )}
                         name="studentOrWho"
@@ -65,7 +69,7 @@ export const About = () => {
                             },
                         ]}
                     />
-                    <Button type="submit">Добавить информацию</Button>
+                    <Button type="submit">{t('about.buttonText')}</Button>
                 </Form>
             </div>
         </Page>
