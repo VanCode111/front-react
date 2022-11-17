@@ -84,6 +84,9 @@ export default {
         passwordLabel: 'Type password',
         buttonText: 'Enter',
     },
+    registration: {
+      buttonText: "Registration"
+    },
     about: {
         heading: 'About',
         whatAreYouDoing: 'What are you doing',

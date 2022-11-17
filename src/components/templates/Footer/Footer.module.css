@@ -61,7 +61,7 @@
 		flex-direction: column;
 	}
 	.img {
-		margin: 0 auto;
+		display: none; 
 	}
     .footer ul{
         display: grid;
@@ -79,4 +79,15 @@
 	.footer a {
 		font-size: 18px;
 	}
+}
+
+@media (max-width: 500px) {
+  .footer a {
+    font-size: 1rem;
+    line-height: 1.375rem;
+  }
+
+  .footer ul {
+    width: 80%;
+  }
 }

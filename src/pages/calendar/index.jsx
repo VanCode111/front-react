@@ -1,34 +1,17 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useState } from "react";
 import cn from "classnames";
-import { Footer, Header, NewHeader } from "../../components/templates";
+import { Footer, Header } from "../../components/templates";
 
 import styles from "./CalendarPage.module.css";
 import { initialState } from "./initialState";
 
 export const CalendarPage = () => {
-  const calcWidth = useCallback(() => {
-    return window.screen.width;
-  }, []);
-
   const [years, setYears] = useState(initialState);
   const [currentAge, setCurrentAge] = useState(26);
-  const [windowWidth, setWindowWidth] = useState(calcWidth());
-  
-  const resizeCallback = useCallback(() => {
-    setWindowWidth(calcWidth());
-  }, [calcWidth]);
-
-  useEffect(() => {
-    window.addEventListener("resize", resizeCallback);
-
-    return () => {
-      window.removeEventListener("resize", resizeCallback);
-    };
-  }, []);
 
   return (
     <div className={styles.page}>
-      {windowWidth < 800 ? <NewHeader /> : <Header />}
+      <Header />
       <div className={styles.container}>
         <h1 className={styles.title}>Календарь жизни</h1>
         <ul className={styles.list}>
