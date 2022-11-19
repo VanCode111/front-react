@@ -1,8 +1,10 @@
 import React, { createContext, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useRoutes } from "react-router-dom";
-import { useTheme } from "../hooks/useTheme";
+import { useTheme } from "../hooks/useTheme"; 
+import { useTranslation } from "react-i18next";
 
+import { Mytasks } from "./Mytasks";
 import { Registration } from "./Registration"
 import { NewTask } from "./Newtask";
 import { Main } from "./main";
@@ -70,6 +72,10 @@ const routes = [
   {
     path: "/registration",
     element: <Registration />,
+  },
+  {
+    path: "/mytasks",
+    element: <Mytasks />,
   },
 ];
 

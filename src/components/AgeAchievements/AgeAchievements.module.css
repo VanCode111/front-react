@@ -27,6 +27,15 @@
     border-radius: 8px;
 }
 
+.achievements .age {
+    background: var(--var-body-sc_1);
+}
+
+.age {
+    color: var(--primaryFontColor);
+
+}
+
 .achievements button:not(:first-child) {
     width: 88px;
     height: 60px;
