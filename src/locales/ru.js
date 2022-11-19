@@ -82,7 +82,10 @@ export default {
         heading: 'Авторизация',
         loginLabel: 'Введите логин',
         passwordLabel: 'Введите пароль',
-        buttonText: 'Далее',
+        buttonText: 'Войти',
+    },
+    registration: {
+      buttonText: "Регистрация"
     },
     about: {
         heading: 'О нас',
