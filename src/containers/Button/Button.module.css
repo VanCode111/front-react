@@ -11,4 +11,5 @@
     align-items: center;
     gap: 24px;
     color: #0A0A0A;
+    background: var(--livedBgColor);
 }

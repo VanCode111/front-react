@@ -1,11 +1,15 @@
-import React from 'react';
+// import React from 'react';
+import React, { useEffect, useState, useCallback } from "react";
+
 
 import './mytasks.css';
 import './bootstrap.min.css';
 
-import { Footer, Header } from '../../components/templates';
+import { Footer, Header, NewHeader } from "../../components/templates";
 
 import classes from '../achievements/achievements.module.css';
+import styles from "./mytasks.css";
+
 
 import newOne from '../achievements/newOne.svg';
 
@@ -39,21 +43,23 @@ const ageAchievements = [
 
 export const Mytasks = () => (
     <appMytasks>
-        <Header />
-        <div className="my_tasks">
+        <div className="my_tasks page">
+            <Header />
             <div className={classes.achievements}>
                 <div className={classes.topPanel}>
-                    <h2>Мои цели</h2>
+                    <div className="titlen">
+                        <h2>Мои цели</h2>
+                    </div>
                     <div className={classes.buttons}>
-                        <Button>
-                            <span>Фильтр</span>
-                            <img src={icon_down} alt="" width="32" />
-                        </Button>
-                        <Button>
-                            <span>Новая цель</span>
-                            <img src={newOne} alt="" width="32" />
-                        </Button>
-                        <a href="#"><img src={search} alt="" /></a>
+                            <Button>
+                                <span>Фильтр</span>
+                                <img src={icon_down} alt="" width="32" />
+                            </Button>
+                            <Button>
+                                    <span>Новая цель</span>
+                                    <img src={newOne} alt="" width="32" />
+                            </Button>
+                            <p className="search"><a href="#"><img  src={search} alt="" /></a></p>
                     </div>
                 </div>
                 <div className={classes.ageAchievements}>
@@ -88,7 +94,9 @@ export const Mytasks = () => (
                     }
                 </div>
             </div>
+            <div className="foot">
+                <Footer />            
+            </div>
         </div>
-        <Footer />
-    </appMytasks>
+    </appMytasks>        
 )

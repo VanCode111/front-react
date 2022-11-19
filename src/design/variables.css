@@ -92,6 +92,7 @@
   --var-body-fc: black;
   --var-body-sc: #ffe0b2;
   --var-body-hc: #c28327;
+  --var-body-sc_1: #FFF7EB;
 }
 
 #root[data-theme="dark"] {
@@ -112,6 +113,7 @@
   --var-body-bg: black;
   --var-body-fc: white;
   --var-body-sc: #27496c;
+  --var-body-sc_1: #27496c;
   --var-body-hc: white;
 }
 
