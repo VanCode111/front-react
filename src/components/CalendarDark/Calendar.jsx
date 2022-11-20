@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable */
@@ -10,24 +11,25 @@ import people from "./people.png";
 import business from "./business.png";
 import group from "./group.png";
 import useSwitcher from "./hooks/useSwitcher";
-import { useTheme } from '../../hooks/useTheme';
+import { useTheme } from "../../hooks/useTheme";
+import { LangButton } from "../atomic";
 
 const Calendar = () => {
-  const {theme, setTheme} = useTheme();
+  const { t } = useTranslation();
+  const { theme, setTheme } = useTheme();
   let svgColor, subColor, helperColor, contrColor;
 
-  if(theme === 'light') {
-    svgColor = '#000';
-    subColor = '#FFE0B2';
-    helperColor = '#C28327';
-    contrColor = '#FFF'
+  if (theme === "light") {
+    svgColor = "#000";
+    subColor = "#FFE0B2";
+    helperColor = "#C28327";
+    contrColor = "#FFF";
   } else {
     svgColor = "#FFF";
     subColor = "#27496C";
     helperColor = "#FFF";
     contrColor = "#000";
   }
-
 
   const dumpSwitchCb = useCallback(
     (prev, index) => ({
@@ -65,7 +67,11 @@ const Calendar = () => {
 
   return (
     <div className={classes.root}>
-      <div className={`${classes.promo} ${theme === 'dark' ? classes['promo--dark'] : ''}`}>
+      <div
+        className={`${classes.promo} ${
+          theme === "dark" ? classes["promo--dark"] : ""
+        }`}
+      >
         <div className={classes.container}>
           <header className={classes.header}>
             <div className={classes.header__container}>
@@ -86,19 +92,19 @@ const Calendar = () => {
                     }`}
                   >
                     <li>
-                      <a href="#">Главная</a>
+                      <a href="#">{t("main.header.main")}</a>
                     </li>
                     <li>
-                      <a href="#">Календарь жизни</a>
+                      <a href="#">{t("main.header.productName")}</a>
                     </li>
                     <li>
-                      <a href="#">Дневник</a>
+                      <a href="#">{t("main.header.diary")}</a>
                     </li>
                     <li>
-                      <a href="#">Цели</a>
+                      <a href="#">{t("main.header.goals")}</a>
                     </li>
                     <li>
-                      <a href="#">Достижения</a>
+                      <a href="#">{t("main.header.archivements")}</a>
                     </li>
                   </ul>
                 )}
@@ -116,7 +122,7 @@ const Calendar = () => {
                 )}
                 <div className={classes.header__nav}>
                   <button type={"button"}>
-                    <span>Вход</span>
+                    <span>{t("main.header.enter")}</span>
                     <svg
                       width="32"
                       height="32"
@@ -145,36 +151,154 @@ const Calendar = () => {
                     </svg>
                   </button>
                   <div className={classes.button__wrapper}>
-                    <button type={"button"} onClick={() => {setTheme(theme === 'light' ? 'dark' : 'light')}}>
-                     {theme === 'dark' ? <svg width="104" height="52" viewBox="0 0 104 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="1" y="1" width="102" height="50" rx="9" fill="#27496C"/>
-                      <circle cx="78" cy="26" r="18" fill="#A6BCD2"/>
-                      <path d="M87.4286 24.2854V19.1426" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M90 21.7144H84.8572" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M82.2858 14.8569V18.2855" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M84.0001 16.5713H80.5715" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M87.5036 28.6359C85.8207 29.1078 84.0426 29.1232 82.3518 28.6807C80.661 28.2381 79.1184 27.3535 77.8825 26.1176C76.6467 24.8818 75.762 23.3392 75.3195 21.6484C74.8769 19.9576 74.8924 18.1794 75.3643 16.4966C73.7051 16.9584 72.1959 17.8468 70.987 19.0734C69.7781 20.3 68.9116 21.8219 68.4739 23.4876C68.0362 25.1532 68.0426 26.9045 68.4923 28.567C68.9421 30.2294 69.8196 31.745 71.0374 32.9628C72.2551 34.1806 73.7707 35.0581 75.4332 35.5078C77.0956 35.9576 78.8469 35.9639 80.5126 35.5262C82.1783 35.0885 83.7002 34.2221 84.9268 33.0131C86.1533 31.8042 87.0418 30.295 87.5036 28.6359Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
-                      <rect x="1" y="1" width="102" height="50" rx="9" stroke="#A6BCD2" stroke-width="2"/>
-                      </svg>
-                      : 
-                      <svg width="104" height="52" viewBox="0 0 104 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="1" y="1" width="102" height="50" rx="9" fill="#FFF7EB"/>
-                      <circle cx="26.4733" cy="26" r="18" fill="#FFE0B2"/>
-                      <path d="M26.4734 32.8571C30.2604 32.8571 33.3305 29.7871 33.3305 26C33.3305 22.2129 30.2604 19.1429 26.4734 19.1429C22.6863 19.1429 19.6162 22.2129 19.6162 26C19.6162 29.7871 22.6863 32.8571 26.4734 32.8571Z" stroke="#424242" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M26.4733 15.7143V13.1429" stroke="#424242" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M18.7591 18.2857L17.0448 16.5714" stroke="#424242" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M16.1876 26H13.6162" stroke="#424242" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M18.7591 33.7143L17.0448 35.4285" stroke="#424242" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M26.4733 36.2857V38.8571" stroke="#424242" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M34.1876 33.7143L35.9019 35.4285" stroke="#424242" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M36.759 26H39.3305" stroke="#424242" stroke-linecap="round" stroke-linejoin="round"/>
-                      <path d="M34.1876 18.2857L35.9019 16.5714" stroke="#424242" stroke-linecap="round" stroke-linejoin="round"/>
-                      <rect x="1" y="1" width="102" height="50" rx="9" stroke="#FFE0B2" stroke-width="2"/>
-                      </svg>
-                      }
+                    <button
+                      type={"button"}
+                      onClick={() => {
+                        setTheme(theme === "light" ? "dark" : "light");
+                      }}
+                    >
+                      {theme === "dark" ? (
+                        <svg
+                          width="104"
+                          height="52"
+                          viewBox="0 0 104 52"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect
+                            x="1"
+                            y="1"
+                            width="102"
+                            height="50"
+                            rx="9"
+                            fill="#27496C"
+                          />
+                          <circle cx="78" cy="26" r="18" fill="#A6BCD2" />
+                          <path
+                            d="M87.4286 24.2854V19.1426"
+                            stroke="white"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M90 21.7144H84.8572"
+                            stroke="white"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M82.2858 14.8569V18.2855"
+                            stroke="white"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M84.0001 16.5713H80.5715"
+                            stroke="white"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M87.5036 28.6359C85.8207 29.1078 84.0426 29.1232 82.3518 28.6807C80.661 28.2381 79.1184 27.3535 77.8825 26.1176C76.6467 24.8818 75.762 23.3392 75.3195 21.6484C74.8769 19.9576 74.8924 18.1794 75.3643 16.4966C73.7051 16.9584 72.1959 17.8468 70.987 19.0734C69.7781 20.3 68.9116 21.8219 68.4739 23.4876C68.0362 25.1532 68.0426 26.9045 68.4923 28.567C68.9421 30.2294 69.8196 31.745 71.0374 32.9628C72.2551 34.1806 73.7707 35.0581 75.4332 35.5078C77.0956 35.9576 78.8469 35.9639 80.5126 35.5262C82.1783 35.0885 83.7002 34.2221 84.9268 33.0131C86.1533 31.8042 87.0418 30.295 87.5036 28.6359Z"
+                            stroke="white"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <rect
+                            x="1"
+                            y="1"
+                            width="102"
+                            height="50"
+                            rx="9"
+                            stroke="#A6BCD2"
+                            stroke-width="2"
+                          />
+                        </svg>
+                      ) : (
+                        <svg
+                          width="104"
+                          height="52"
+                          viewBox="0 0 104 52"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect
+                            x="1"
+                            y="1"
+                            width="102"
+                            height="50"
+                            rx="9"
+                            fill="#FFF7EB"
+                          />
+                          <circle cx="26.4733" cy="26" r="18" fill="#FFE0B2" />
+                          <path
+                            d="M26.4734 32.8571C30.2604 32.8571 33.3305 29.7871 33.3305 26C33.3305 22.2129 30.2604 19.1429 26.4734 19.1429C22.6863 19.1429 19.6162 22.2129 19.6162 26C19.6162 29.7871 22.6863 32.8571 26.4734 32.8571Z"
+                            stroke="#424242"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M26.4733 15.7143V13.1429"
+                            stroke="#424242"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M18.7591 18.2857L17.0448 16.5714"
+                            stroke="#424242"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M16.1876 26H13.6162"
+                            stroke="#424242"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M18.7591 33.7143L17.0448 35.4285"
+                            stroke="#424242"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M26.4733 36.2857V38.8571"
+                            stroke="#424242"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M34.1876 33.7143L35.9019 35.4285"
+                            stroke="#424242"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M36.759 26H39.3305"
+                            stroke="#424242"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M34.1876 18.2857L35.9019 16.5714"
+                            stroke="#424242"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <rect
+                            x="1"
+                            y="1"
+                            width="102"
+                            height="50"
+                            rx="9"
+                            stroke="#FFE0B2"
+                            stroke-width="2"
+                          />
+                        </svg>
+                      )}
                     </button>
                     <button type={"button"}>
-                      <span>RU</span>
+                      {/* <span>RU</span>
                       <svg
                         width="16"
                         height="11"
@@ -186,7 +310,8 @@ const Calendar = () => {
                           d="M10.1104 9.91129C8.94134 11.0683 7.05866 11.0683 5.88964 9.91129L1.06106 5.13223C-0.843856 3.24685 0.491239 -1.88036e-06 3.17141 -1.64605e-06L12.8286 -8.0179e-07C15.5088 -5.67482e-07 16.8439 3.24685 14.9389 5.13223L10.1104 9.91129Z"
                           fill={svgColor}
                         />
-                      </svg>
+                      </svg> */}
+                      <LangButton className={classes.langButton} />
                     </button>
                   </div>
                 </div>
@@ -197,15 +322,13 @@ const Calendar = () => {
             <div className={classes.main__container}>
               <div className={classes.content}>
                 <h1 className={classes.content__title}>
-                  Ваши цели под контролем!
+                  {t("main.content.title")}
                 </h1>
                 <p className={classes.content__description}>
-                  Наше дело не так однозначно, как может показаться: реализация
-                  намеченных плановых заданий требует анализа вывода текущих
-                  активов.
+                  {t("main.content.description")}
                 </p>
                 <button className={classes.content__button} type={"button"}>
-                  Скачать
+                  {t("main.content.downloadText")}
                 </button>
                 <div className={classes.content__links}>
                   <a href="#">
@@ -356,11 +479,10 @@ const Calendar = () => {
       <div className={classes.container}>
         <section className={classes.interface}>
           <h2 className={classes.interface__title}>
-            Спланируйте свою жизнь на годы вперёд!
+            {t("main.interface.title")}
           </h2>
           <p className={classes.interface__paragraph}>
-            Наше приложение поможет грамотно управлять временем, ставить цели и
-            отслеживать достижения. Начните планировать свою жизнь сейчас!
+            {t("main.interface.paragraph")}
           </p>
           <div className={classes.interface__switch}>
             <button
@@ -392,7 +514,7 @@ const Calendar = () => {
         </section>
 
         <section className={classes.ability}>
-          <h2 className={classes.ability__title}>Ключевые возможности!</h2>
+          <h2 className={classes.ability__title}>{t("main.abilityText")}</h2>
           <div className={classes["ability__img-wrap"]}>
             <svg
               className={abilityState[0] && classes["ability__active"]}
@@ -561,84 +683,69 @@ const Calendar = () => {
           </div>
           {abilityState[0] && (
             <>
-              <h3 className={classes.ability__subtitle}>Заметки</h3>
+              <h3 className={classes.ability__subtitle}>
+                {t("main.ability.first.title")}
+              </h3>
               <div className={classes.ability__paragraph}>
-                Заметки дают возможность записывать важные мысли за день,
-                помогает структурировать данные и мысли. Сохраняя нужную
-                информацию в «Заметках», Вы, при необходимости, можете
-                обратиться к ним и, например, освежить память о прошедшем дне,
-                не забыть важное дело и поделиться наблюдениями
+                {t("main.ability.first.text")}
               </div>
             </>
           )}
           {abilityState[1] && (
             <>
               <h3 className={classes.ability__subtitle}>
-                Планируйте и достигайте
+                {t("main.ability.second.title")}
               </h3>
               <div className={classes.ability__paragraph}>
-                Календарь жизни поможет сосредоточиться на достижении целей.
-                Планируйте, отслеживайте прогресс, добивайтесь!
+                {t("main.ability.second.text")}
               </div>
             </>
           )}
           {abilityState[2] && (
             <>
               <h3 className={classes.ability__subtitle}>
-                использование в браузере
+                {t("main.ability.third.title")}
               </h3>
               <div className={classes.ability__paragraph}>
-                Вы часто проводите время за компьютером? Тогда это приложение
-                точно ля вас! Вы сможете синхронизировать данные с телефона на
-                ПК, сохранив все данные без потерь. Теперь отслеживать свои цели
-                стало проще!
+                {t("main.ability.third.text")}
               </div>
             </>
           )}
           {abilityState[3] && (
             <>
-              <h3 className={classes.ability__subtitle}>Уведомления</h3>
+              <h3 className={classes.ability__subtitle}>
+                {t("main.ability.forth.title")}
+              </h3>
               <div className={classes.ability__paragraph}>
-                Приложение напомнит Вам о невыполненной задаче, которая была
-                запланирована на сегодняшний день. Укажите свою электронную
-                почту, чтобы письма с уведомлениями приходили и туда. Это
-                особенно удобно, если Вы пользуетесь только веб-сервисом.
+                {t("main.ability.forth.text")}
               </div>
             </>
           )}
           {abilityState[4] && (
             <>
               <h3 className={classes.ability__subtitle}>
-                отслеживание прогресса
+                {t("main.ability.fifth.title")}
               </h3>
               <div className={classes.ability__paragraph}>
-                Вы сможете наглядно посмотреть процесс выполнения поставленной
-                цели. Визуализированное планирование помогает отслеживать
-                прогресс проще и эффективнее.
+                {t("main.ability.fifth.text")}
               </div>
             </>
           )}
           <button className={classes.ability__btn} type={"submit"}>
-            Попробовать бесплатно
+            {t("main.tryFree")}
           </button>
         </section>
         <section className={classes.people}>
-        <link rel="preload" as="image" href={business}></link>
+          <link rel="preload" as="image" href={business}></link>
           <link rel="preload" as="image" href={group}></link>
-          <h2>Кому подойдет?</h2>
+          <h2>{t("main.peopleTitle")}</h2>
           <div className={classes.people__description}>
             {peopleState[0] && (
               <>
                 <img src={people} alt="People" />
                 <div>
-                  <h3>Людям с большими планами на жизнь</h3>
-                  <p>
-                    Наше приложение подойдет для тех, кто не хочет тратить в
-                    пустую свою жизнь. Вы сможете спроектировать программу
-                    тренировок, питания и сна с возможностью отслеживать
-                    прогресс силовых показателей и время на восстановление. Или
-                    расписать экстримальные увлечения для их достижения.
-                  </p>
+                  <h3>{t("main.people.first.title")}</h3>
+                  <p>{t("main.people.first.text")}</p>
                 </div>
               </>
             )}
@@ -646,12 +753,8 @@ const Calendar = () => {
               <>
                 <img src={business} alt="People" />
                 <div>
-                  <h3>Бизнесменам</h3>
-                  <p>
-                    Спроектировать списки деловых встреч, отслеживать успехи
-                    бизнеса, доходов и затрат. Жить в достатке в свое
-                    удовольствие.
-                  </p>
+                  <h3>{t("main.people.second.title")}</h3>
+                  <p>{t("main.people.second.text")}</p>
                 </div>
               </>
             )}
@@ -659,14 +762,8 @@ const Calendar = () => {
               <>
                 <img src={group} alt="People" />
                 <div>
-                  <h3>Студентам</h3>
-                  <p>
-                    Для грамотного тайм-менеджмента, успевать выполнять свою
-                    рутинную жизнь и заодно заниматься учебой, работой, хобби.
-                    Помнить о всех учебных требованиях, возможность отслеживать
-                    свои достижения в области науки и учебы, количество
-                    приобретенных навыков и умений, качество полученных знаний.
-                  </p>
+                  <h3>{t("main.people.third.title")}</h3>
+                  <p>{t("main.people.third.text")}</p>
                 </div>
               </>
             )}
@@ -696,7 +793,7 @@ const Calendar = () => {
           </div>
         </section>
         <section className={classes.questions}>
-          <h2>FAQ Часто задаваемые вопросы</h2>
+          <h2>{t("main.questionsTitle")}</h2>
           <div className={classes.questions__items}>
             <div className={classes.questions__item}>
               <div
@@ -728,22 +825,14 @@ const Calendar = () => {
                     fill={helperColor}
                   />
                 </svg>
-                <h3>Можно ли скачать приложение на телефон?</h3>
+                <h3>{t("main.questions.first.title")}</h3>
               </div>
               <div
                 className={classes["questions__item-body"]}
                 hidden={!accordState[0]}
               >
                 <p className={classes["questions__item-text"]}>
-                  Мы вынуждены отталкиваться от того, что разбавленное изрядной
-                  долей эмпатии, рациональное мышление влечет за собой процесс
-                  внедрения и модернизации укрепления моральных ценностей. А
-                  также непосредственные участники технического прогресса
-                  набирают популярность среди определенных слоев населения, а
-                  значит, должны быть ассоциативно распределены по отраслям.
-                  Задача организации, в особенности же убеждённость некоторых
-                  оппонентов способствует подготовке и реализации анализа
-                  существующих паттернов поведения.
+                  <h3>{t("main.questions.first.text")}</h3>
                 </p>
               </div>
             </div>
@@ -777,16 +866,14 @@ const Calendar = () => {
                     fill={helperColor}
                   />
                 </svg>
-                <h3>Что такое Календарь Жизни?</h3>
+                <h3>{t("main.questions.second.title")}</h3>
               </div>
               <div
                 className={classes["questions__item-body"]}
                 hidden={!accordState[1]}
               >
                 <p className={classes["questions__item-text"]}>
-                  Календарь жизни - Ваш помощник в сфере планирования. Наше
-                  приложение поможет сосредоточиться на достижении целей.
-                  Планируйте, отслеживайте прогресс, добивайтесь!
+                  {t("main.questions.second.text")}
                 </p>
               </div>
             </div>
@@ -820,15 +907,17 @@ const Calendar = () => {
                     fill={helperColor}
                   />
                 </svg>
-                <h3>Что я могу делать в этом приложении?</h3>
+                <h3>{t("main.questions.third.title")}</h3>
               </div>
               <div
                 className={classes["questions__item-body"]}
                 hidden={!accordState[2]}
               >
                 <p className={classes["questions__item-text"]}>
-                  1. Добавлять достижения <br /> 2. Ставить цели <br /> 3.
-                  Составлять планы <br /> 4. Вести дневник
+                  1. {t("main.questions.third.text.first")}
+                  <br /> 2. {t("main.questions.third.text.second")} <br /> 3.
+                  {t("main.questions.third.text.third")} <br /> 4.{" "}
+                  {t("main.questions.third.text.forth")}
                 </p>
               </div>
             </div>
@@ -862,18 +951,14 @@ const Calendar = () => {
                     fill={helperColor}
                   />
                 </svg>
-                <h3>
-                  В чем разница между Календарем Жизни и другими приложениями?{" "}
-                </h3>
+                <h3>{t("main.questions.forth.title")} </h3>
               </div>
               <div
                 className={classes["questions__item-body"]}
                 hidden={!accordState[3]}
               >
                 <p className={classes["questions__item-text"]}>
-                  Преимущество нашего приложения в том, что это не просто to-do
-                  list, а цифровой планер, в котором вы можете расставлять цели,
-                  отслеживать достижения и грамотно управлять временем.
+                  {t("main.questions.forth.text")}
                 </p>
               </div>
             </div>
@@ -886,26 +971,27 @@ const Calendar = () => {
             )}
             <ul>
               <li>
-                <a href="#">Скачать приложение</a>
+                <a href="#">{t("main.footer.download")}</a>
               </li>
               <li>
-                <a href="#">О нас</a>
+                <a href="#">{t("main.footer.about")}</a>
               </li>
               <li>
-                <a href="#">Обратная связь</a>
+                <a href="#">{t("main.footer.feedback")}</a>
               </li>
               <li>
-                <a href="#">Веб-версия</a>
+                <a href="#">{t("main.footer.webVersion")}</a>
               </li>
               <li>
-                <a href="#">Партнеры</a>
+                <a href="#">{t("main.footer.partners")}</a>
               </li>
             </ul>
           </div>
           <div className={classes.project}>
-            <p>@мосполитех 2022</p>
+            <p>{t("main.footer.project.tag")}</p>
             <p>
-              Лаборатория инициативных проектов <br /> “Календарь жизни”
+              {t("main.footer.project.start")} <br /> “
+              {t("main.footer.project.end")}”
             </p>
           </div>
         </footer>

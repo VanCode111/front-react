@@ -2,10 +2,10 @@ import React, { createContext, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useRoutes } from "react-router-dom";
 import { useTheme } from "../hooks/useTheme"; 
-// import { useTranslation } from "react-i18next";
+// import { useTheme } from "../hooks/useTheme";
 
 import { Mytasks } from "./Mytasks";
-import { Registration } from "./Registration"
+import { Registration } from "./Registration";
 import { NewTask } from "./Newtask";
 import { Main } from "./main";
 import { DashBoard } from "./dashboard";
@@ -66,6 +66,10 @@ const routes = [
     element: <Users />,
   },
   {
+    path: "/registration",
+    element: <Registration />,
+  },
+  {
     path: "/newtask",
     element: <NewTask />,
   },
@@ -84,9 +88,10 @@ export const AppRouter = () => {
   const { i18n } = useTranslation();
 
   useEffect(() => {
-      i18n.changeLanguage((storage.get('language')?.activeLang || Lang.RU).toLowerCase())
-  }, [i18n])
-
+    i18n.changeLanguage(
+      (storage.get("language")?.activeLang || Lang.RU).toLowerCase()
+    );
+  }, [i18n]);
 
   const component = useRoutes(routes);
 

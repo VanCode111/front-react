@@ -1,16 +1,19 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+
 import { Card } from "../../containers";
 import { Form } from "../Form/Form";
 import styles from "./UsersFilters.module.css";
 import classNames from "classnames";
 
 const UsersFilters = () => {
+  const { t } = useTranslation();
   return (
     <Card>
       <Form className={styles.form}>
         <Form.Input
           name="id"
-          label="ID:"
+          label={`${t("users.table.id")}:`}
           placeholder="ID:"
           variant="secondary"
           containerClass={classNames(styles.formItem, styles.userId)}
@@ -23,18 +26,18 @@ const UsersFilters = () => {
           containerClass={classNames(styles.formItem, styles.lastName)}
           name="id"
           color="dark"
-          label="Фамилия:"
+          label={`${t("users.table.surname")}:`}
           variant="secondary"
-          placeholder="Фамилия:"
+          placeholder={`${t("users.table.surname")}:`}
           className={styles.formInput}
           labelPosition="top"
         />
 
         <Form.Input
           name="id"
-          label="Имя:"
+          label={`${t("users.table.name")}:`}
           variant="secondary"
-          placeholder="Имя:"
+          placeholder={`${t("users.table.name")}:`}
           color="dark"
           containerClass={classNames(styles.formItem, styles.name)}
           className={styles.formInput}
@@ -42,9 +45,9 @@ const UsersFilters = () => {
         />
         <Form.Input
           name="id"
-          label="Почта:"
+          label={`${t("users.table.mail")}:`}
           variant="secondary"
-          placeholder="Почта:"
+          placeholder={`${t("users.table.mail")}:`}
           color="dark"
           containerClass={classNames(styles.formItem, styles.email)}
           className={styles.formInput}
@@ -52,7 +55,7 @@ const UsersFilters = () => {
         />
         <Form.DatePicker
           name="id"
-          label="Дата др:"
+          label={`${t("users.table.date")}:`}
           variant="secondary"
           color="dark"
           containerClass={classNames(styles.formItem, styles.dateRegist)}
@@ -61,7 +64,7 @@ const UsersFilters = () => {
         />
         <Form.DatePicker
           name="id"
-          label="Дата регистрации:"
+          label={`${t("users.table.regDate")}:`}
           variant="secondary"
           color="dark"
           containerClass={classNames(styles.formItem, styles.dateRegist)}
