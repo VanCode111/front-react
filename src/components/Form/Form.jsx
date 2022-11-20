@@ -29,12 +29,24 @@ Input.propTypes = {
   register: PropTypes.func,
 };
 
-const Option = ({ label, name, data, id, className, register, ...props }) => (
+const Option = ({
+  label,
+  name,
+  data,
+  id,
+  className,
+  register,
+  variant,
+  labelPosition,
+  ...props
+}) => (
   <select
     name={name}
     id={id}
     {...register(name)}
-    className={classNames(classes.select, className)}
+    className={classNames(classes.select, className, {
+      [classes.secondarySelect]: labelPosition === "top",
+    })}
     {...props}
   >
     {data.map((item) => (

@@ -1,6 +1,6 @@
 import React, { createContext, useMemo } from "react";
 import { useRoutes } from "react-router-dom";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 import { useTheme } from "../hooks/useTheme";
 import { Main } from "./main";
@@ -12,6 +12,7 @@ import { CalendarPage } from "./calendar";
 import { About } from "./about";
 import { Users } from "./users";
 import { MyAccount } from "./myacc";
+import { Registration } from "./registration";
 
 import Calendar from "../components/CalendarDark/Calendar";
 
@@ -61,6 +62,10 @@ const routes = [
     path: "/users",
     element: <Users />,
   },
+  {
+    path: "/registration",
+    element: <Registration />,
+  },
 ];
 
 export const AppRouter = () => {
@@ -68,9 +73,10 @@ export const AppRouter = () => {
   const { i18n } = useTranslation();
 
   useEffect(() => {
-      i18n.changeLanguage((storage.get('language')?.activeLang || Lang.RU).toLowerCase())
-  }, [i18n])
-
+    i18n.changeLanguage(
+      (storage.get("language")?.activeLang || Lang.RU).toLowerCase()
+    );
+  }, [i18n]);
 
   const component = useRoutes(routes);
 

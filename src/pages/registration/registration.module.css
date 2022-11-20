@@ -1,0 +1,38 @@
+.login {
+    background: url("../../static/images/Illustation.svg") no-repeat right;
+    background-size: 900px;
+    margin: 0 auto;
+    max-width: 1400px;
+  }
+  
+  .title {
+    font-family: "Comfortaa";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 70px;
+    margin-bottom: 80px;
+  }
+  
+  .input {
+    margin-bottom: 35px;
+    width: 100%;
+  }
+  
+  .form {
+    max-width: 500px;
+    padding-right: 150px;
+  }
+  
+  .label {
+    font-family: "Nunito";
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+  }
+
+.datePicker button {
+    border: 2px solid #ffe0b2
+}

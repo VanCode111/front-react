@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "classnames";
 import PropTypes from "prop-types";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 import { Link } from "react-router-dom";
 import { LangButton, ThemeButton } from "../../atomic";
@@ -24,32 +24,32 @@ export const Header = ({ className, variant, ...props }) => {
           <ul className={styles.list}>
             <li className={styles.item}>
               <Link className={styles.link} to="/">
-                {t('headers.main')}
+                {t("headers.main")}
               </Link>
             </li>
             <li className={styles.item}>
               <Link className={styles.link} to="/">
-                {t('headers.appName')}
+                {t("headers.appName")}
               </Link>
             </li>
             <li className={styles.item}>
               <Link className={styles.link} to="/">
-                {t('headers.goal')}
+                {t("headers.goal")}
               </Link>
             </li>
             <li className={styles.item}>
               <Link className={styles.link} to="/">
-                {t('headers.achievements')}
+                {t("headers.achievements")}
               </Link>
             </li>
             <li className={styles.item}>
               <Link className={styles.link} to="/">
-                {t('headers.diary')}
+                {t("headers.diary")}
               </Link>
             </li>
             <li className={styles.item}>
               <Link className={styles.link} to="/">
-              {t('headers.profile')}
+                {t("headers.profile")}
                 <img src={OutIcon} alt="вход" />
               </Link>
             </li>
@@ -62,7 +62,7 @@ export const Header = ({ className, variant, ...props }) => {
       </div>
     </div>
   );
-}
+};
 Header.propTypes = {
   className: PropTypes.string,
 };

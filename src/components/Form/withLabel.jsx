@@ -42,6 +42,7 @@ export const withLabel =
           {...props}
           variant={variant}
           control={control}
+          labelPosition={labelPosition}
         />
       </div>
     );
