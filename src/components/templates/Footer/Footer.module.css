@@ -82,7 +82,7 @@
 }
 
 @media (max-width: 500px) {
-  .footer a {
+  .footer a, .footer p {
     font-size: 1rem;
     line-height: 1.375rem;
   }
