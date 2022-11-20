@@ -21,7 +21,7 @@ export const Registration = () => {
   return (
     <Page>
       <div className={classes.login}>
-        <h5 className={classes.title}>{t("auth.heading")}</h5>
+        <h5 className={classes.title}>{t("reg.heading")}</h5>
         <Form onSubmit={onSubmit} className={classes.form}>
           <Form.Input
             labelPosition="top"

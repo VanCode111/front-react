@@ -194,6 +194,9 @@ export default {
     date: "Date before",
     RegDate: "Registration date",
   },
+  reg: {
+    heading: "Registration",
+  },
   users: {
     title: "Users",
     filter: "Reset the filter",

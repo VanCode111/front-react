@@ -84,6 +84,9 @@ export default {
     passwordLabel: "Введите пароль",
     buttonText: "Далее",
   },
+  reg: {
+    heading: "Регистрация",
+  },
   about: {
     heading: "О нас",
     whatAreYouDoing: "Чем вы занимаетесь?",
