@@ -201,4 +201,13 @@ export default {
       regDate: "Дата регистрации",
     },
   },
+  auth: {
+    heading: "Авторизация",
+    loginLabel: "Введите логин",
+    passwordLabel: "Введите пароль",
+    buttonText: "Войти",
+  },
+  registration: {
+    buttonText: "Регистрация",
+  },
 };

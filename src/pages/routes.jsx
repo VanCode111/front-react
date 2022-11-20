@@ -1,8 +1,11 @@
 import React, { createContext, useMemo } from "react";
-import { useRoutes } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-
+import { useRoutes } from "react-router-dom";
 import { useTheme } from "../hooks/useTheme";
+
+import { Mytasks } from "./Mytasks";
+import { Registration } from "./Registration";
+import { NewTask } from "./Newtask";
 import { Main } from "./main";
 import { DashBoard } from "./dashboard";
 import { Achievements } from "./achievements";
@@ -12,7 +15,6 @@ import { CalendarPage } from "./calendar";
 import { About } from "./about";
 import { Users } from "./users";
 import { MyAccount } from "./myacc";
-import { Registration } from "./registration";
 
 import Calendar from "../components/CalendarDark/Calendar";
 
@@ -65,6 +67,18 @@ const routes = [
   {
     path: "/registration",
     element: <Registration />,
+  },
+  {
+    path: "/newtask",
+    element: <NewTask />,
+  },
+  {
+    path: "/registration",
+    element: <Registration />,
+  },
+  {
+    path: "/mytasks",
+    element: <Mytasks />,
   },
 ];
 

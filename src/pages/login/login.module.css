@@ -1,17 +1,32 @@
 .login {
-  background: url("../../static/images/Illustation.svg") no-repeat right;
-  background-size: contain;
-  height: 800px;
+  display: grid;
+  justify-content: center;
+  grid-template-areas: 'form illustration';
+  grid-template-columns: 45% 45%;
+  gap: 10%;
   margin: 0 auto;
   max-width: 1400px;
+  width: 90%;
+}
+
+.formWrapper {
+  grid-area: form;
+  padding: 0;
+  margin: 0;
+}
+
+.illustration {
+  width: 100%;
+  grid-area: illustration;
+  align-self: flex-end;
 }
 
 .title {
   font-family: "Comfortaa";
   font-style: normal;
   font-weight: 300;
-  font-size: 64px;
-  line-height: 70px;
+  font-size: 4rem;
+  line-height: 4.375rem;
   margin-bottom: 80px;
 }
 
@@ -20,8 +35,13 @@
   width: 100%;
 }
 
-.form {
-  max-width: 500px;
+.button {
+  display: block;
+  width: 100%;
+}
+
+.button:first-of-type {
+  margin-bottom: 24px;
 }
 
 .label {
@@ -31,4 +51,35 @@
   align-items: center;
   gap: 10px;
   font-size: 18px;
+}
+
+
+@media (max-width: 1060px) {
+  .title {
+    font-size: 3rem;
+    line-height: 3.375rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .login {
+    grid-template-areas: 'illustration'
+                          'form';
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .illustration {
+    width: 60%;
+    justify-self: center;
+    align-self: flex-end;
+  }
+
+  .title {
+    display: none;
+  }
 }

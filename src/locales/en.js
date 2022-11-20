@@ -209,4 +209,13 @@ export default {
       regDate: "Registration date",
     },
   },
+  registration: {
+    buttonText: "Registration",
+  },
+  about: {
+    heading: "About",
+    whatAreYouDoing: "What are you doing",
+    whoAreYou: "Who are you",
+    buttonText: "Add information",
+  },
 };
