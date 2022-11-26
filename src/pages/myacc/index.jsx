@@ -8,6 +8,7 @@ import { AccountForm } from '../../components/AccountForm/AccountForm';
 import { ChartCard } from '../../components/ChartCard/ChartCard';
 import { statistics } from '../../mock/account';
 
+
 import classes from './myacc.module.css';
 
 export const MyAccount = () => {
