@@ -31,3 +31,28 @@
 .card {
   background: var(--secondaryShade1OrPrimaryShade2);
 }
+
+@media (max-width: 1600px) { 
+  .Textarea_textarea__A2SJt {
+    /* width: 10px; */
+  }
+}
+
+@media (max-width: 950px) { 
+  .card {
+    /* display: block;
+    max-width: max-content;
+    align-items:center; */
+    display: flex;
+  }
+
+  /* .myacc_graphicContainer__A92T7 {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+  } */
+
+  .wrapper {
+    display: contents;
+  }
+}
