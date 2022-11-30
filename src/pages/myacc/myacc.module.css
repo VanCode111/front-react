@@ -32,17 +32,21 @@
   background: var(--secondaryShade1OrPrimaryShade2);
 }
 
-@media (max-width: 1600px) { 
+/* @media (max-width: 1600px) { 
   .Textarea_textarea__A2SJt {
-    /* width: 10px; */
+    width: 10px;
   }
-}
+} */
 
 @media (max-width: 950px) { 
-  .card {
-    /* display: block;
+  /* .card {
+    display: block;
     max-width: max-content;
-    align-items:center; */
+    align-items:center;
+    display: flex;
+  } */
+
+  .card {
     display: flex;
   }
 

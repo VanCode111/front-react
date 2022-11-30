@@ -13,7 +13,7 @@ import classes from './myacc.module.css';
 
 export const MyAccount = () => {
     const { t } = useTranslation();
-
+    
     return (
         <AdminPage title={t('account.heading')} mainClassName={classes.wrapper}>
             <div>
